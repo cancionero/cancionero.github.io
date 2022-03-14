@@ -1,0 +1,161 @@
+﻿<center>
+<body>
+<audio id="audio" preload="auto" tabindex="0" controls="" >
+  <source src="01 Hoy.mp3">
+</audio>
+<style type="text/css" media="screen">
+#playlist, audio{
+  background:#666;
+  width:400px;
+  padding:20px;
+  list-style: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+a {
+  text-decoration:none;
+}
+.active a {
+  color:#5DB0E6;
+  text-decoration:none;
+}
+li a{
+  color:#eeeedd;
+  background:#333;
+  padding:5px;
+  display:block;
+}
+li a:hover{
+  text-decoration:none;
+}
+</style>
+<ul id="playlist">
+        <li class="active">
+           <a href="01 Hoy.mp3">
+				Hoy
+           </a>
+        </li>
+        <li>
+            <a href="02 El portero José.mp3">
+                El portero José
+            </a>
+        </li>
+        <li>
+            <a href="03 Niño de plata.mp3">
+                Niño de plata
+            </a>
+        </li>
+        <li>
+            <a href="04 Alhelí.mp3">
+                Alhelí
+            </a>
+        </li>
+        <li>
+            <a href="05 La casa del patio.mp3">
+                La casa del patio
+            </a>
+        </li>
+		<li>
+            <a href="06 Silencio en el aire.mp3">
+                Silencio en el aire
+            </a>
+        </li>
+		<li>
+            <a href="07 Consejos a un padre llamado.mp3">
+                Consejos a un padre llamado
+            </a>
+        </li>
+		<li>
+            <a href="08 Detrás del más allá.mp3">
+                Detrás del más allá
+            </a>
+        </li>
+		<li>
+            <a href="09 Zamba del viento y del alma.mp3">
+                Zamba del viento y del alma
+            </a>
+        </li>
+		<li>
+            <a href="10 Hermano árbol.mp3">
+                Hermano árbol
+            </a>
+        </li>
+		<li>
+            <a href="11 Tan sólo por ser viejos.mp3">
+                Tan sólo por ser viejos
+            </a>
+        </li>
+		<li>
+            <a href="12 Alguna vez.mp3">
+                Alguna vez
+            </a>
+        </li>
+		<li>
+            <a href="13 La máquina del tiempo.mp3">
+                La máquina del tiempo
+            </a>
+        </li>
+		<li>
+            <a href="14 Eterno caminante.mp3">
+                Eterno caminante
+            </a>
+        </li>
+    </ul>
+<script>
+init();
+
+function init(){
+    var audio = document.getElementById('audio');
+    var playlist = document.getElementById('playlist');
+    var tracks = playlist.getElementsByTagName('a');
+    audio.volume = 0.10;
+    audio.play();
+    
+    //Agregamos los eventos a los links que nos permitirán cambiar de canción
+    for(var track in tracks) {
+      var link = tracks[track];
+      if(typeof link === "function" || typeof link === "number") continue;
+      link.addEventListener('click', function(e) {
+      	e.preventDefault();
+        var song = this.getAttribute('href');
+       	run(song, audio, this);
+      });
+    }
+    //agregamos evento para reproducir la siguiente canción en la lista
+    //si la canción es la ultima reproducir la primera otra vez
+    audio.addEventListener('ended',function(e) {
+        for(var track in tracks) {
+          var link = tracks[track];
+          var nextTrack = parseInt(track) + 1;
+          if(typeof link === "function" || typeof link === "number") continue;
+          if(!this.src) this.src = tracks[0];
+          if(track == (tracks.length - 1)) nextTrack = 0;
+                                	console.log(nextTrack);
+        	if(link.getAttribute('href') === this.src) {
+          	var nextLink = tracks[nextTrack];
+          	run(nextLink.getAttribute('href'), audio, nextLink);
+            break;
+          }
+        }
+    });
+}
+
+function run(song, audio, link){
+        var parent = link.parentElement;
+        //quitar el active de todos los elementos de la lista
+        var items = parent.parentElement.getElementsByTagName('li');
+        for(var item in items) {
+          if(items[item].classList)
+            items[item].classList.remove("active");
+        }
+        
+        //agregar active a este elemento
+        parent.classList.add("active");
+        
+        //tocar la cancion
+        audio.src = song;
+        audio.load();
+        audio.play();
+}
+</script>
+</body>
+</center>
