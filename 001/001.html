@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zapatillas</title>
+    <style>
+        #playlist{
+            list-style: none;
+        }
+        #playlist li a{
+            color:black;
+            text-decoration: none;
+        }
+        #playlist .current-song a{
+            color:blue;
+        }
+
+    </style>
+	<center><h1><font color="grey" size="4" face="arial">micancionero.ml</font></h1></center></div>
+<hr>
+<div align="center"><img src="001.jpg" width="400" height="400"></div><br>
+</head>
+<center>
+<body>
+    
+    <audio src="" controls autoplay="" id="audioPlayer">
+        Sorry, your browser doesn't support html5!
+    </audio>
+    <ul id="playlist">
+        <li class="current-song"><a href="01 Hoy.mp3">Hoy</a></li>
+        <li><a href="02 El portero José.mp3">El portero José</a></li>
+        <li><a href="03 Niño de plata.mp3">Niño de plata</a></li>
+		<li><a href="04 Alhelí.mp3">Alhelí</a></li>
+		<li><a href="05 La casa del patio.mp3">La casa del patio</a></li>
+		<li><a href="06 Silencio en el aire.mp3">Silencio en el aire</a></li>
+		<li><a href="07 Consejos a un padre llamado.mp3">Consejos a un padre llamado</a></li>
+		<li><a href="08 Detrás del más allá.mp3">Detrás del más allá</a></li>
+		<li><a href="09 Zamba del viento y del alma.mp3">Zamba del viento y del alma</a></li>
+		<li><a href="10 Hermano árbol.mp3">Hermano árbol</a></li>
+		<li><a href="11 Tan sólo por ser viejos.mp3">Tan sólo por ser viejos</a></li>
+		<li><a href="12 Alguna vez.mp3"></a>Alguna vez</li>
+		<li><a href="13 La máquina del tiempo.mp3">La máquina del tiempo</a></li>
+		<li><a href="14 Eterno caminante.mp3">Eterno caminante</a></li>
+    </ul>
+    <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+    <script src="audioPlayer.js"></script>
+    <script>
+        // loads the audio player
+        audioPlayer();
+    </script>
+</body>
+</center>
+</html>
