@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>El Vendedor de Canciones</title>
+    <style>
+        #playlist{
+            list-style: none;
+        }
+        #playlist li a{
+            color:black;
+            text-decoration: none;
+        }
+        #playlist .current-song a{
+            color:blue;
+        }
+
+    </style>
+	<center><h1><font color="green" size="4" face="arial">www.micancionero.ml</font></h1></center></div>
+<hr>
+<div align="center"><img src="003.jpg" width="400" height="400"></div><br>
+</head>
+<center>
+<body>
+    
+    <audio src="" controls autoplay="" id="audioPlayer">
+        Sorry, your browser doesn't support html5!
+    </audio>
+    <ul id="playlist">
+        <li class="current-song"><a href="01 Blanco.mp3">Blanco</a></li>
+        <li><a href="02 El vendedor de canciones.mp3">El Vendedor de Canciones</a></li>
+		<li><a href="03 El atardecer de mi barrio.mp3">El atardecer de mi barrio</a></li>
+		<li><a href="04 Canción por la paz.mp3">Canción por la paz</a></li>
+		<li><a href="05 Cuento del árbol.mp3">Cuento del árbol</a></li>
+		<li><a href="06 Instrumental.mp3">Instrumental</a></li>
+		<li><a href="07 Sólo el amor.mp3">Sólo el amor</a></li>
+		<li><a href="08 Cuando los ojos se miran.mp3">Cuando los ojos se miran</a></li>
+		<li><a href="09 Marisol.mp3">Marisol</a></li>
+		<li><a href="10 Si se cruza....mp3">Si se cruza...</a></li>
+		<li><a href="11 Estoy bien.mp3">Estoy bien</a></li>
+		<li><a href="12 Canción de cuna.mp3">Canción de cuna</a></li>
+    </ul>
+    <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+    <script src="audioPlayer.js"></script>
+    <script>
+        // loads the audio player
+        audioPlayer();
+    </script>
+</body>
+<br><br><div align="center"><img src="003b.jpg" width="500" height="500"></div><br><hr>
+</center>
+</html>
