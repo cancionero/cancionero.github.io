@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-title" content="cancionero.ml" />
 <meta name="generator" content="VisualNEO Web (19.9.16)" />
-<meta name="date" content="2024-03-19 06:23" />
+<meta name="date" content="2024-03-19 19:30" />
 <meta name="version" content="1.0" />
 <meta name="copyright" content="Copyright 2024 IoSoft Producciones" />
 <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -17,7 +17,6 @@
 <link rel="stylesheet" href="css/nzAnimate.min.css">
 <link rel="stylesheet" href="css/neoapp-ui.min.css">
 <link rel="stylesheet" href="css/style.css">
-<link rel="shortcut icon" href="img/favicon.png" />
 </head>
 <body id="ng-app" ng-app="NeoApp" ng-cloak>
 <div ng-controller="NeoApp_CoreCtrl" ng-view ng-cloak id="ng-view" class="app-viewport[NAB._pageEffect]"></div>
@@ -32,7 +31,7 @@
 <script type="text/ng-template" id="Discos">
 <div id="Discos">
 <div id="ListaDiscos" class="[NAB.ListaDiscos_effect]" ng-style="NAB.ListaDiscos_style" ng-hide="NAB.ListaDiscos_hidden" ng-disabled="NAB.ListaDiscos_disabled">
-<img id="Image1" alt="Zapatillas" ng-src="img/01.jpg" class="[NAB.Image1_effect]" ng-style="NAB.Image1_style" ng-hide="NAB.Image1_hidden" ng-disabled="NAB.Image1_disabled" ng-click="Image1_click()">
+<img id="Image1" alt="" ng-src="img/01.jpg" class="[NAB.Image1_effect]" ng-style="NAB.Image1_style" ng-hide="NAB.Image1_hidden" ng-disabled="NAB.Image1_disabled" ng-click="Image1_click()">
 <img id="Image2" alt="" ng-src="img/02.jpg" class="[NAB.Image2_effect]" ng-style="NAB.Image2_style" ng-hide="NAB.Image2_hidden" ng-disabled="NAB.Image2_disabled" ng-click="Image2_click()">
 <img id="Image3" alt="" ng-src="img/03.jpg" class="[NAB.Image3_effect]" ng-style="NAB.Image3_style" ng-hide="NAB.Image3_hidden" ng-disabled="NAB.Image3_disabled" ng-click="Image3_click()">
 <img id="Image4" alt="" ng-src="img/04.jpg" class="[NAB.Image4_effect]" ng-style="NAB.Image4_style" ng-hide="NAB.Image4_hidden" ng-disabled="NAB.Image4_disabled" ng-click="Image4_click()">
@@ -63,8 +62,9 @@
 <img id="Image29" alt="" ng-src="img/29.jpg" class="[NAB.Image29_effect]" ng-style="NAB.Image29_style" ng-hide="NAB.Image29_hidden" ng-disabled="NAB.Image29_disabled" ng-click="Image29_click()">
 <img id="Image30" alt="" ng-src="img/30.jpg" class="[NAB.Image30_effect]" ng-style="NAB.Image30_style" ng-hide="NAB.Image30_hidden" ng-disabled="NAB.Image30_disabled" ng-click="Image30_click()">
 </div>
-<div id="Header" class="[NAB.Header_effect]" ng-style="NAB.Header_style" ng-hide="NAB.Header_hidden" ng-disabled="NAB.Header_disabled" ng-click="Header_click()"><br><div align="center"><font color="grey" size="5">Mi Cancionero&nbsp;&nbsp;&nbsp;<img src="img/mp3.png" height="75">&nbsp;</div>
-<button id="PushButton1" type="button"  class="btn btn-primary [NAB.PushButton1_effect]" ng-style="NAB.PushButton1_style" ng-hide="NAB.PushButton1_hidden" ng-disabled="NAB.PushButton1_disabled" ng-click="PushButton1_click()"><span class="glyphicon glyphicon-question-sign"></span></button>
+<div id="Header" class="[NAB.Header_effect]" ng-style="NAB.Header_style" ng-hide="NAB.Header_hidden" ng-disabled="NAB.Header_disabled" ng-click="Header_click()"><br><div align="center"><font color="#FAEBD7" size="5">Mi Cancionero&nbsp;&nbsp;&nbsp;<img src="img/mp3.png" height="75">&nbsp;</div><br>
+
+<button id="btnAcercaDe" type="button"  class="btn btn-primary [NAB.btnAcercaDe_effect]" ng-style="NAB.btnAcercaDe_style" ng-hide="NAB.btnAcercaDe_hidden" ng-disabled="NAB.btnAcercaDe_disabled" ng-click="btnAcercaDe_click()"><span class="glyphicon glyphicon-question-sign"></span></button>
 </div>
 </div>
 </script>
@@ -72,8 +72,9 @@
 <div id="Escuchar">
 <div id="ContEscuchar" class="[NAB.ContEscuchar_effect]" ng-style="NAB.ContEscuchar_style" ng-hide="NAB.ContEscuchar_hidden" ng-disabled="NAB.ContEscuchar_disabled">
 </div>
-<div id="Header" class="[NAB.Header_effect]" ng-style="NAB.Header_style" ng-hide="NAB.Header_hidden" ng-disabled="NAB.Header_disabled" ng-click="Header_click()"><br><div align="center"><font color="grey" size="5">Mi Cancionero&nbsp;&nbsp;&nbsp;<img src="img/mp3.png" height="75">&nbsp;</div>
-<button id="PushButton1" type="button"  class="btn btn-primary [NAB.PushButton1_effect]" ng-style="NAB.PushButton1_style" ng-hide="NAB.PushButton1_hidden" ng-disabled="NAB.PushButton1_disabled" ng-click="PushButton1_click()"><span class="glyphicon glyphicon-question-sign"></span></button>
+<div id="Header" class="[NAB.Header_effect]" ng-style="NAB.Header_style" ng-hide="NAB.Header_hidden" ng-disabled="NAB.Header_disabled" ng-click="Header_click()"><br><div align="center"><font color="#FAEBD7" size="5">Mi Cancionero&nbsp;&nbsp;&nbsp;<img src="img/mp3.png" height="75">&nbsp;</div><br>
+
+<button id="btnAcercaDe" type="button"  class="btn btn-primary [NAB.btnAcercaDe_effect]" ng-style="NAB.btnAcercaDe_style" ng-hide="NAB.btnAcercaDe_hidden" ng-disabled="NAB.btnAcercaDe_disabled" ng-click="btnAcercaDe_click()"><span class="glyphicon glyphicon-question-sign"></span></button>
 </div>
 </div>
 </script>
