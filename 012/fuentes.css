@@ -1,0 +1,15 @@
+
+li {
+font-family: cuicsand;
+font-size: 20px;
+}
+
+p {
+font-family: cuicsand;
+font-size: 18px;
+}
+
+@font-face {
+font-family: cuicsand;
+src: url('Quicksand.ttf');
+}
