@@ -3,10 +3,10 @@ body {height:1600px;width:100%}
 .app-viewport {position:absolute;top:0;bottom:0;width:100%}
 html{background:#eeeeee}body{background:rgba(255,255,255,0);position:absolute;top:0px;bottom:0px;left:0px;right:0px;margin:auto}p,h1,h2,h3,h4,h5,h6{overflow:hidden}a:focus,.btn:focus,.btn:active:focus,.btn.active:focus,.btn.focus,.btn:active.focus,.btn.active.focus,input[type="radio"]:focus,input[type="checkbox"]:focus{outline:0}.nav,.pagination,.carousel,.panel-title a{cursor:pointer}.modal{overflow:auto}.modal-dialog{margin-top:0;margin-bottom:0;padding-top:10px}.modal-content{overflow:hidden}.modal-backdrop{opacity:.5}.pagination{margin:0}.input-group-btn{vertical-align:top}.input-group-btn>.btn{height:100%}.input-group>.form-control{height:100%}.input-group{padding:0}.neocheckbox [type="checkbox"]:not(:checked),.neocheckbox [type="checkbox"]:checked{position:absolute;left:-9999px}.neocheckbox [type="checkbox"]:not(:checked) + label,.neocheckbox [type="checkbox"]:checked + label{position:relative;padding-left:1.95em;cursor:pointer}.neocheckbox [type="checkbox"]:not(:checked) + label:before,.neocheckbox [type="checkbox"]:checked + label:before{content:'';position:absolute;left:0;top:0;width:1.25em;height:1.25em;border:0.15em solid #aaa;background:#fff;border-radius:4px}.neocheckbox [type="checkbox"]:not(:checked) + label:after,.neocheckbox [type="checkbox"]:checked + label:after{content:"\2713\0020";position:absolute;top:.2em;left:.2em;font-size:1.1em;line-height:0.8;color:#444444;transition:all .2s;font-family:'Lucida Sans Unicode','Arial Unicode MS',Arial}.neocheckbox [type="checkbox"]:not(:checked) + label:after{opacity:0;transform:scale(0)}.neocheckbox [type="checkbox"]:checked + label:after{opacity:1;transform:scale(1)}.neocheckbox [type="checkbox"]:disabled:not(:checked) + label:before,.neocheckbox [type="checkbox"]:disabled:checked + label:before{box-shadow:none;border-color:#bbb;background-color:#ddd}.neocheckbox [type="checkbox"]:disabled:checked + label:after{color:#999}.neocheckbox [type="checkbox"]:disabled + label{color:#aaa}.neocheckbox label:hover:before{border:0.15em solid #888!important}.neoradio [type="radio"]:not(:checked),.neoradio [type="radio"]:checked{position:absolute;left:-9999px}.neoradio [type="radio"]:not(:checked) + label,.neoradio [type="radio"]:checked + label{position:relative;padding-left:1.95em;cursor:pointer}.neoradio [type="radio"]:not(:checked) + label:before,.neoradio [type="radio"]:checked + label:before{content:'';position:absolute;left:0;top:0;width:1.25em;height:1.25em;border:0.15em solid #aaa;background:#fff;border-radius:100px}.neoradio [type="radio"]:not(:checked) + label:after,.neoradio [type="radio"]:checked + label:after{content:"\2713\0020";position:absolute;top:.2em;left:.2em;font-size:1.1em;line-height:0.8;color:#444444;transition:all .2s;font-family:'Lucida Sans Unicode','Arial Unicode MS',Arial}.neoradio [type="radio"]:not(:checked) + label:after{opacity:0;transform:scale(0)}.neoradio [type="radio"]:checked + label:after{opacity:1;transform:scale(1)}.neoradio [type="radio"]:disabled:not(:checked) + label:before,.neoradio [type="radio"]:disabled:checked + label:before{box-shadow:none;border-color:#bbb;background-color:#ddd}.neoradio [type="radio"]:disabled:checked + label:after{color:#999}.neoradio [type="radio"]:disabled + label{color:#aaa}.neoradio label:hover:before{border:0.15em solid #888!important}
 #Header {position:relative;width:768px;height:104px;background-color:#383838;border-style:solid;border-width:1px;overflow-x:hidden;overflow-y:hidden}
-#btnAcercaDe {position:absolute;left:90.625%;width:9.375%;top:55px;height:40px;margin:0;padding-right:30px}
+#btnAcercaDe {position:absolute;left:90.625%;width:9.375%;top:55px;height:40px;margin:0;padding-right:50px}
 #INTRO {position:relative;width:100%;height:100%;overflow:auto;;background-color:#E0E0E0}
 #ContINTRO {position:absolute;left:50%;width:46.875%;top:152px;height:264px;margin:0;text-align:center;overflow-x:hidden;overflow-y:hidden}
-#Paragraph1 {position:relative;width:232px;height:64px;color:#383838;text-align:center}
+#Paragraph1 {position:relative;width:360px;height:64px;color:#383838;text-align:center}
 #btnON {position:relative;width:100px;height:100px;cursor:pointer}
 #Discos {position:relative;width:100%;height:100%;overflow:auto;;background-color:#B2D0DC}
 #ListaDiscos {position:absolute;left:2.47395833333333%;width:95.0520833333333%;top:112px;height:1976px;margin:0;text-align:center;overflow-y:scroll;overflow-x:hidden}
@@ -42,9 +42,12 @@ html{background:#eeeeee}body{background:rgba(255,255,255,0);position:absolute;to
 #Image30 {position:relative;width:170px;height:170px;margin:10px;box-shadow:5px 5px 10px black;cursor:pointer}
 #Escuchar {position:relative;width:100%;height:100%;overflow:auto;;background-color:#FFF}
 #ContEscuchar {position:absolute;left:0px;width:100%;top:112px;height:790px;margin:0;;overflow-x:hidden;overflow-y:hidden}
-#AcercaDe {margin-left:auto;margin-right:auto;width:41.6666666666667%;height:360px;background-color:#383838}
-#Container1 {position:absolute;left:5%;width:90%;top:16px;height:264px;margin:0;color:#A0522D;overflow-x:hidden;overflow-y:hidden}
-#PushButton2 {position:absolute;left:42.5%;width:15%;top:296px;height:40px;margin:0;text-align:center}
+#AcercaDe {margin-left:auto;margin-right:auto;width:41.6666666666667%;height:481px;background-color:#383838}
+#Container1 {position:absolute;left:5%;width:90%;top:16px;height:386px;margin:0;color:#A0522D;overflow-x:hidden;overflow-y:hidden}
+#PushButton2 {position:absolute;left:42.5%;width:15%;top:420px;height:40px;margin:0;text-align:center}
+h1 {font-family: titulo;font-size: 30px;}
+
+@font-face {font-family: titulo;src: url('fonts/dkletra.otf');}
 #btnCerrar {width: 48px;}
 #btnAcercaDe {width: 72px;}
 #btnDisco {width: 160px;}
@@ -57,3 +60,4 @@ html{background:#eeeeee}body{background:rgba(255,255,255,0);position:absolute;to
 #ContEscuchar {width: 100%;Height: 100%;bottom: 65;top: 113;}
 #AcercaDe {width: 320px;}
 #ContINTRO {position: relative;height:220px;width:360px;top: 18%;left: 50%;transform: translate(-50%, -50%);}
+.circular-square {border-radius: 8%;}
