@@ -1,58 +1,159 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Disco 16</title>
+    <link rel="stylesheet" href="fuentes.css">
     <style>
-	    
-		#playlist{
-            list-style: none;
+        body {
+            background-color: #166866;
+            color: white;
+            font-family: 'Poppins', Arial, Helvetica, sans-serif;
+            margin:0;
+            padding:0;
         }
-        #playlist li a{
-            color:white;
-            text-decoration: none;
-			font-family: Arial, Helvetica, sans-serif;
+        .banner {
+            display:flex;
+            align-items:center;
+            justify-content:flex-start;
+            background-color:#1a7a82;
+            padding:10px 15px;
+            box-shadow:0 2px 6px rgba(0,0,0,0.5);
+            position:sticky;
+            top:0;
+            z-index:10;
         }
-        #playlist .current-song a{
-            color:#87CEFA;
-			font-weight: 900;
+        .banner button {
+            background-color:#87CEFA;
+            border:none;
+            padding:8px 15px;
+            border-radius:5px;
+            font-weight:bold;
+            cursor:pointer;
+            margin-right:15px;
+        }
+        .banner h1 { font-size:1.2rem; margin:0; }
+
+        .cover-card {
+            width:380px;
+            margin:20px auto;
+            border-radius:8px;
+            overflow:hidden;
+            box-shadow:0 6px 15px rgba(0,0,0,0.6);
+        }
+        .cover-card img { width:100%; display:block; }
+
+        #playlist {
+            list-style:none;
+            padding:0;
+            max-width:400px;
+            margin:20px auto;
+        }
+        #playlist li {
+            background-color: rgba(0,0,0,0.3);
+            margin:5px 0;
+            padding:10px 15px;
+            border-radius:5px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            cursor:pointer;
+            transition:background-color 0.3s;
+        }
+        #playlist li.current-song {
+            background-color:#87CEFA;
+            font-weight:900;
+        }
+        #playlist li:hover { background-color: rgba(135,206,250,0.5); }
+        #playlist li span.duration { font-size:0.85rem; color:#f0f0f0; }
+
+        .credits {
+            max-width:800px;
+            margin:30px auto;
+            padding:15px;
+            background-color: rgba(0,0,0,0.3);
+            border-radius:8px;
+            font-size:0.9rem;
+            line-height:1.4;
         }
 
-.circular-square {
-  border-radius: 3%;
-}
+        @media (max-width:450px) {
+            .cover-card, #playlist { width:90%; }
+            .banner h1 { font-size:1rem; }
+        }
     </style>
-<link rel="stylesheet" href="fuentes.css">
 </head>
-<br><hr><br>
-<div align="center"><a href="016.jpg" target="_blank"><img class="circular-square" width="380" src="016.jpg"></a></div><br>
-<center>
-<body bgcolor="#166866">
-    
-    <audio src="" controls autoplay="" id="audioPlayer">
-        Sorry, your browser doesn't support html5!
-    </audio>
+<body>
+
+    <div align="center" class="banner">
+        <button onclick="history.back()">Atrás</button>
+        <h1>Adentro (2011)</h1>
+    </div>
+
+    <div class="cover-card">
+        <img src="016.jpg" alt="Portada Disco 16">
+    </div>
+
+    <audio id="audioPlayer" controls autoplay style="display:block; margin:0 auto;"></audio>
+
     <ul id="playlist">
-        <li class="current-song"><a href="01 Adentro.mp3">Adentro</a></li>
-<li><a href="02 Estoy bien.mp3">Estoy bien</a></li>
-<li><a href="03 En la vereda.mp3">En la vereda</a></li>
-<li><a href="04 Huellas en mis pies.mp3">Huellas en mis pies</a></li>
-<li><a href="05 Lo demás.mp3">Lo demás</a></li>
-<li><a href="06 No divagues.mp3">No divagues</a></li>
-<li><a href="07 Quédate conmigo.mp3">Quédate conmigo</a></li>
-<li><a href="08 Preguntas.mp3">Preguntas</a></li>
-<li><a href="09 Quiera o no.mp3">Quiera o no</a></li>
-<li><a href="10 Sin embargos.mp3">Sin embargos</a></li>
-<li><a href="11 Yo también.mp3">Yo también</a></li>
-
+        <li class="current-song" data-src="01 Adentro.mp3"><span>🎵</span> Adentro <span class="duration"></span></li>
+        <li data-src="02 Estoy bien.mp3"><span>🎵</span> Estoy bien <span class="duration"></span></li>
+        <li data-src="03 En la vereda.mp3"><span>🎵</span> En la vereda <span class="duration"></span></li>
+        <li data-src="04 Huellas en mis pies.mp3"><span>🎵</span> Huellas en mis pies <span class="duration"></span></li>
+        <li data-src="05 Lo demás.mp3"><span>🎵</span> Lo demás <span class="duration"></span></li>
+        <li data-src="06 No divagues.mp3"><span>🎵</span> No divagues <span class="duration"></span></li>
+        <li data-src="07 Quédate conmigo.mp3"><span>🎵</span> Quédate conmigo <span class="duration"></span></li>
+        <li data-src="08 Preguntas.mp3"><span>🎵</span> Preguntas <span class="duration"></span></li>
+        <li data-src="09 Quiera o no.mp3"><span>🎵</span> Quiera o no <span class="duration"></span></li>
+        <li data-src="10 Sin embargos.mp3"><span>🎵</span> Sin embargos <span class="duration"></span></li>
+        <li data-src="11 Yo también.mp3"><span>🎵</span> Yo también <span class="duration"></span></li>
     </ul>
-    <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
-    <script src="audioPlayer.js"></script>
-    <script>
-        // loads the audio player
-        audioPlayer();
-    </script>
-</body>
 
-</center>
+    <div class="credits">
+        Todos los temas arreglados e interpretados por Ricardo Contard.<br>
+        Grabación y masterización: Ricardo Contard.<br>
+        Gracias a todos los que hicieron posible este disco.
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+    <script>
+        const audio = document.getElementById('audioPlayer');
+        const tracks = $('#playlist li');
+        let currentIndex = 0;
+
+        function playTrack(li) {
+            tracks.removeClass('current-song');
+            li.addClass('current-song');
+            audio.src = li.data('src');
+            audio.play();
+            currentIndex = li.index();
+        }
+
+        // Inicializar con la primera canción
+        playTrack(tracks.first());
+
+        // Click en playlist
+        tracks.click(function() { playTrack($(this)); });
+
+        // Reproducir siguiente al terminar
+        audio.addEventListener('ended', function() {
+            currentIndex++;
+            if (currentIndex >= tracks.length) currentIndex = 0;
+            playTrack(tracks.eq(currentIndex));
+        });
+
+        // Cargar duración de cada pista
+        tracks.each(function() {
+            const li = $(this);
+            const tempAudio = new Audio(li.data('src'));
+            tempAudio.addEventListener('loadedmetadata', function() {
+                const dur = Math.floor(tempAudio.duration / 60) + ':' + ('0'+Math.floor(tempAudio.duration % 60)).slice(-2);
+                li.find('.duration').text(dur);
+            });
+        });
+    </script>
+
+</body>
 </html>
