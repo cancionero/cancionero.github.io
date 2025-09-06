@@ -1,62 +1,222 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-	    
-		#playlist{
-            list-style: none;
-        }
-        #playlist li a{
-            color:white;
-            text-decoration: none;
-			font-family: Arial, Helvetica, sans-serif;
-        }
-        #playlist .current-song a{
-            color:#87CEFA;
-			font-weight: 900;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disco 9</title>
 
-.circular-square {
-  border-radius: 3%;
-}
-    </style>
-<link rel="stylesheet" href="fuentes.css">
+  <!-- Fuente moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #FCF3CF;
+      text-align: center;
+    }
+
+    /* Mini Banner */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      background: rgba(0,0,0,0.7);
+      padding: 12px 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      margin: 0 auto;
+      font-size: 1.2rem;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .back-btn {
+      background: #ff9800;
+      color: #111;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .back-btn:hover {
+      background: #ffc107;
+      transform: translateY(-2px);
+    }
+
+    /* Portada */
+    .album-cover {
+      margin: 40px auto 20px;
+      max-width: 400px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+      transition: transform 0.3s ease;
+    }
+    .album-cover:hover {
+      transform: scale(1.03);
+    }
+    .album-cover img {
+      width: 100%;
+      display: block;
+    }
+
+    /* Reproductor */
+    audio {
+      margin: 20px auto;
+      width: 90%;
+      max-width: 600px;
+      border-radius: 8px;
+      background: #111;
+    }
+
+    /* Playlist */
+    #playlist {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 20px auto;
+      text-align: left;
+    }
+    #playlist li {
+      background: rgba(255,255,255,0.05);
+      margin: 6px 0;
+      padding: 12px 16px;
+      border-radius: 8px;
+      transition: background 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    #playlist li:hover {
+      background: rgba(255,255,255,0.15);
+      cursor: pointer;
+    }
+    #playlist li a {
+      color: #FCF3CF;
+      text-decoration: none;
+      flex: 1;
+    }
+    #playlist li::before {
+      content: "🎵";
+      font-size: 1.2rem;
+    }
+    #playlist .current-song {
+      background: #ff9800;
+      color: #111;
+      font-weight: 600;
+    }
+    #playlist .current-song a {
+      color: #111;
+    }
+
+    /* Duración */
+    .duration {
+      font-size: 0.9rem;
+      color: #bbb;
+      min-width: 50px;
+      text-align: right;
+    }
+
+    /* Créditos / historia */
+    .credits {
+      max-width: 800px;
+      margin: 40px auto;
+      background: rgba(0,0,0,0.4);
+      padding: 20px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      text-align: justify;
+    }
+  </style>
 </head>
-<br><hr><br>
-<div align="center"><a href="009.jpg" target="_blank"><img class="circular-square" width="380" src="009.jpg"></a></div><br>
-<center>
-<body bgcolor="#166866">
-    
-    <audio src="" controls autoplay="" id="audioPlayer">
-        Sorry, your browser doesn't support html5!
-    </audio>
-    <ul id="playlist">
-        <li class="current-song"><a href="01 Oda al primer fuego.mp3">Oda al primer fuego</a></li>
-        <li><a href="02 Oda a la enseñanza.mp3">Oda a la enseñanza</a></li>
-<li><a href="03 Oda al amor.mp3">Oda al amor</a></li>
-<li><a href="04 Oda a las cosas esenciales.mp3">Oda a las cosas esenciales</a></li>
-<li><a href="05 Oda al primer fuego Vocal.mp3">Oda al primer fuego (vocal)</a></li>
-<li><a href="06 Oda a los emigrantes.mp3">Oda a los emigrantes</a></li>
-<li><a href="07 Oda a la Navidad.mp3">Oda a la Navidad</a></li>
-<li><a href="08 Oda a la gente bonita.mp3">Oda a la gente bonita</a></li>
-<li><a href="09 Oda a la enseñanza Vocal.mp3">Oda a la enseñanza (vocal)</a></li>
-<li><a href="10 Oda a la buena vida.mp3">Oda a la buena vida</a></li>
-<li><a href="11 Oda a la juventud.mp3">Oda a la juventud</a></li>
-<li><a href="12 Oda para guitarra.mp3">Oda para guitarra (instr.)</a></li>
+<body>
 
-    </ul>
-    <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
-    <script src="audioPlayer.js"></script>
-    <script>
-        // loads the audio player
-        audioPlayer();
-    </script>
+  <!-- Mini banner con botón atrás -->
+  <header>
+    <button class="back-btn" onclick="window.history.back()">⬅ Atrás</button>
+    <h1>Odas (2008)</h1>
+  </header>
+
+  <!-- Portada principal -->
+  <div class="album-cover">
+    <a href="009.jpg" target="_blank">
+      <img src="009.jpg" alt="Portada del disco">
+    </a>
+  </div>
+
+  <!-- Reproductor -->
+  <audio src="" controls autoplay id="audioPlayer">
+    Sorry, your browser doesn't support HTML5!
+  </audio>
+
+  <!-- Playlist -->
+  <ul id="playlist">
+    <li class="current-song"><a href="01 Oda al primer fuego.mp3">Oda al primer fuego</a><span class="duration"></span></li>
+    <li><a href="02 Oda a la enseñanza.mp3">Oda a la enseñanza</a><span class="duration"></span></li>
+    <li><a href="03 Oda al amor.mp3">Oda al amor</a><span class="duration"></span></li>
+    <li><a href="04 Oda a las cosas esenciales.mp3">Oda a las cosas esenciales</a><span class="duration"></span></li>
+    <li><a href="05 Oda al primer fuego Vocal.mp3">Oda al primer fuego (vocal)</a><span class="duration"></span></li>
+    <li><a href="06 Oda a los emigrantes.mp3">Oda a los emigrantes</a><span class="duration"></span></li>
+    <li><a href="07 Oda a la Navidad.mp3">Oda a la Navidad</a><span class="duration"></span></li>
+    <li><a href="08 Oda a la gente bonita.mp3">Oda a la gente bonita</a><span class="duration"></span></li>
+    <li><a href="09 Oda a la enseñanza Vocal.mp3">Oda a la enseñanza (vocal)</a><span class="duration"></span></li>
+    <li><a href="10 Oda a la buena vida.mp3">Oda a la buena vida</a><span class="duration"></span></li>
+    <li><a href="11 Oda a la juventud.mp3">Oda a la juventud</a><span class="duration"></span></li>
+    <li><a href="12 Oda para guitarra.mp3">Oda para guitarra (instr.)</a><span class="duration"></span></li>
+  </ul>
+
+  <!-- Créditos / historia -->
+  <div class="credits">
+    <p>
+      La oda (del griego <i>odé</i>, “canto”) es la composición lírica en verso,
+      de mediana extensión y de tema noble y elevado. Antiguamente era utilizada para ser cantada con el acompañamiento de un instrumento musical.
+      En la Grecia antigua, donde tiene sus principios, existían dos tipos de odas: las corales y las cantadas por una sola voz (monodía).
+    </p>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+  <script src="audioPlayer.js"></script>
+  <script>
+    // Inicia el reproductor
+    audioPlayer();
+
+    // Función para convertir segundos a mm:ss
+    function formatTime(seconds) {
+      const min = Math.floor(seconds / 60);
+      const sec = Math.floor(seconds % 60);
+      return `${min}:${sec < 10 ? '0' : ''}${sec}`;
+    }
+
+    // Recorre cada canción y obtiene su duración
+    document.querySelectorAll('#playlist li').forEach(li => {
+      const link = li.querySelector('a');
+      const durationSpan = li.querySelector('.duration');
+      const audio = new Audio(link.getAttribute('href'));
+
+      audio.addEventListener('loadedmetadata', () => {
+        durationSpan.textContent = formatTime(audio.duration);
+      });
+    });
+  </script>
+
 </body>
-<br><br><hr><font color="#FCF3CF"><p align="center">La oda (del griego <i>odé</i>, “canto”) es la composición lírica en verso,<br>
-de mediana extensión y de tema noble y elevado. Antiguamente era utilizada para ser cantada con el acompañamiento de un instrumento musical.<br>
-En la Grecia antigua, donde tiene sus principios, existían dos tipos de odas: las corales y las cantadas por una sola voz (monodía).<br>
-<br></p></font>
-</center>
 </html>
