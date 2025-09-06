@@ -1,71 +1,231 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        #playlist{
-            list-style: none;
-        }
-        #playlist li a{
-            color:white;
-            text-decoration: none;
-			font-family: Arial, Helvetica, sans-serif;
-        }
-        #playlist .current-song a{
-            color:#87CEFA;
-			font-weight: 900;
-        }
-.circular-square {
-  border-radius: 3%;
-}
-    </style>
-<link rel="stylesheet" href="fuentes.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disco 5</title>
+
+  <!-- Fuente moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #FCF3CF;
+      text-align: center;
+    }
+
+    /* Mini Banner */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      background: rgba(0,0,0,0.7);
+      padding: 12px 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      margin: 0 auto;
+      font-size: 1.2rem;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .back-btn {
+      background: #ff9800;
+      color: #111;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .back-btn:hover {
+      background: #ffc107;
+      transform: translateY(-2px);
+    }
+
+    /* Portada */
+    .album-cover {
+      margin: 40px auto 20px;
+      max-width: 400px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+      transition: transform 0.3s ease;
+    }
+    .album-cover:hover {
+      transform: scale(1.03);
+    }
+    .album-cover img {
+      width: 100%;
+      display: block;
+    }
+
+    /* Reproductor */
+    audio {
+      margin: 20px auto;
+      width: 90%;
+      max-width: 600px;
+      border-radius: 8px;
+      background: #111;
+    }
+
+    /* Playlist */
+    #playlist {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 20px auto;
+      text-align: left;
+    }
+    #playlist li {
+      background: rgba(255,255,255,0.05);
+      margin: 6px 0;
+      padding: 12px 16px;
+      border-radius: 8px;
+      transition: background 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    #playlist li:hover {
+      background: rgba(255,255,255,0.15);
+      cursor: pointer;
+    }
+    #playlist li a {
+      color: #FCF3CF;
+      text-decoration: none;
+      flex: 1;
+    }
+    #playlist li::before {
+      content: "🎵";
+      font-size: 1.2rem;
+    }
+    #playlist .current-song {
+      background: #ff9800;
+      color: #111;
+      font-weight: 600;
+    }
+    #playlist .current-song a {
+      color: #111;
+    }
+
+    /* Duración */
+    .duration {
+      font-size: 0.9rem;
+      color: #bbb;
+      min-width: 50px;
+      text-align: right;
+    }
+
+    /* Créditos / historia */
+    .credits {
+      max-width: 800px;
+      margin: 40px auto;
+      background: rgba(0,0,0,0.4);
+      padding: 20px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      text-align: justify;
+    }
+
+    .credits h3 {
+      text-align: center;
+      color: #FCF3CF;
+      margin-top: 0;
+    }
+  </style>
 </head>
-<br><hr><br>
-<div align="center"><a href="005.jpg" target="_blank"><img class="circular-square" width="380" src="005.jpg"></a></div><br>
-<center>
-<body bgcolor="#166866">
-    
-    <audio src="" controls autoplay="" id="audioPlayer">
-        Sorry, your browser doesn't support html5!
-    </audio>
-    <ul id="playlist">
-        <li class="current-song"><a href="01 Hasta el final.mp3">Hasta el final</a></li>
-        <li><a href="02 Sueños.mp3">Sueños</a></li>
-<li><a href="03 Amasando un verso.mp3">Amasando un verso</a></li>
-<li><a href="04 Dos cuerdas un barrilete.mp3">Dos cuerdas, un barrilete</a></li>
-<li><a href="05 En mi corazón.mp3">En mi corazón</a></li>
-<li><a href="06 Yo voy a ser.mp3">Yo voy a ser</a></li>
-<li><a href="07 La voz del camino.mp3">La voz del camino</a></li>
-<li><a href="08 Sonrisas.mp3">Sonrisas</a></li>
-    </ul>
-    <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
-    <script src="audioPlayer.js"></script>
-    <script>
-        // loads the audio player
-        audioPlayer();
-    </script>
+<body>
+
+  <!-- Mini banner con botón atrás -->
+  <header>
+    <button class="back-btn" onclick="window.history.back()">⬅ Atrás</button>
+    <h1>Lo esencial es invisible a los ojos (2007)</h1>
+  </header>
+
+  <!-- Portada principal -->
+  <div class="album-cover">
+    <a href="005.jpg" target="_blank">
+      <img src="005.jpg" alt="Portada del disco">
+    </a>
+  </div>
+
+  <!-- Reproductor -->
+  <audio src="" controls autoplay id="audioPlayer">
+    Sorry, your browser doesn't support HTML5!
+  </audio>
+
+  <!-- Playlist -->
+  <ul id="playlist">
+    <li class="current-song"><a href="01 Hasta el final.mp3">Hasta el final</a><span class="duration"></span></li>
+    <li><a href="02 Sueños.mp3">Sueños</a><span class="duration"></span></li>
+    <li><a href="03 Amasando un verso.mp3">Amasando un verso</a><span class="duration"></span></li>
+    <li><a href="04 Dos cuerdas un barrilete.mp3">Dos cuerdas, un barrilete</a><span class="duration"></span></li>
+    <li><a href="05 En mi corazón.mp3">En mi corazón</a><span class="duration"></span></li>
+    <li><a href="06 Yo voy a ser.mp3">Yo voy a ser</a><span class="duration"></span></li>
+    <li><a href="07 La voz del camino.mp3">La voz del camino</a><span class="duration"></span></li>
+    <li><a href="08 Sonrisas.mp3">Sonrisas</a><span class="duration"></span></li>
+  </ul>
+
+  <!-- Créditos / historia -->
+  <div class="credits">
+    <h3>Lo esencial es invisible a los ojos…</h3>
+    <p>(en busca de la palabra perfecta)</p>
+    <p>
+      Esta es la historia de cuando Alicio Sacco; el mismo que inventó las zapatillas, voló como el viento, se hizo vendedor de canciones,
+      y regaló algunas a Valentino; se decidió por fin a escalar la Montaña de la Sabiduría sin otro motivo que la búsqueda de la palabra perfecta.<br><br>
+      Buscaba una palabra que las resuma a todas. Una que lo diga todo.<br>
+      Una palabra que lo definiera a él; que definiera la vida, el destino, el misterio… buscaba lo esencial de un lenguaje.<br>
+      La palabra sin la cual el mundo no podría existir siquiera.<br>
+      Y en esa ardua búsqueda encontró lo esencial de sí mismo. Todo el arte que emanaba de su alma estaba en esa montaña.<br>
+      Lo vio. Lo sintió. Lo experimentó.<br>
+      Y su sensación se vuelca ahora en estas obras, en estas melodías. Las sensaciones del hombre que toda la vida se dedicó a buscar el arco iris.
+    </p>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+  <script src="audioPlayer.js"></script>
+  <script>
+    // Inicia el reproductor
+    audioPlayer();
+
+    // Función para convertir segundos a mm:ss
+    function formatTime(seconds) {
+      const min = Math.floor(seconds / 60);
+      const sec = Math.floor(seconds % 60);
+      return `${min}:${sec < 10 ? '0' : ''}${sec}`;
+    }
+
+    // Recorre cada canción y obtiene su duración
+    document.querySelectorAll('#playlist li').forEach(li => {
+      const link = li.querySelector('a');
+      const durationSpan = li.querySelector('.duration');
+      const audio = new Audio(link.getAttribute('href'));
+
+      audio.addEventListener('loadedmetadata', () => {
+        durationSpan.textContent = formatTime(audio.duration);
+      });
+    });
+  </script>
+
 </body>
-<br><br><hr><font size="4" color="#FCF3CF"><h3>Lo esencial es invisible a los ojos…</h3>(en busca de la palabra perfecta)<br><br>
-<p align="center">
-Esta es la historia de cuando Alicio Sacco; el mismo que inventó las zapatillas, voló como el viento, se hizo vendedor de canciones,<br>
-y regaló algunas a Valentino; se decidió por fin a escalar la Montaña de la Sabiduría sin otro motivo que la búsqueda de la palabra perfecta.
-<br>
-Buscaba una palabra que las resuma a todas. Una que lo diga todo.
-<br>
-Una palabra que lo definiera a él; que definiera la vida,
-<br>
-el destino, el misterio… buscaba lo esencial de un lenguaje.
-<br>
-La palabra sin la cual el mundo no podría existir siquiera.
-<br>
-Y en esa ardua búsqueda encontró lo esencial de sí mismo. Todo el arte que emanaba de su alma estaba en esa montaña.
-<br>
-Lo vio. Lo sintió. Lo experimentó.
-<br>
-Y su sensación se vuelca ahora en estas obras, en estas melodías.
-<br>
-Las sensaciones del hombre que toda la vida se dedicó a buscar el arco iris.</p></font>
-</center>
 </html>
