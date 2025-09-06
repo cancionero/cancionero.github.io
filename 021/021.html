@@ -1,64 +1,251 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-	    
-		#playlist{
-            list-style: none;
-        }
-        #playlist li a{
-            color:white;
-            text-decoration: none;
-			font-family: Arial, Helvetica, sans-serif;
-        }
-        #playlist .current-song a{
-            color:#87CEFA;
-			font-weight: 900;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Disco 21</title>
 
-.circular-square {
-  border-radius: 3%;
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- Font Awesome para iconos musicales -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    color: #f5f5f5;
 }
-    </style>
-<link rel="stylesheet" href="fuentes.css">
+
+/* ===== Banner fijo superior ===== */
+.banner {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #1f1f1f;
+    color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.6);
+    z-index: 1000;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.banner h2 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.banner button {
+    background-color: #ff4c4c;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.banner button:hover {
+    background-color: #e04343;
+}
+
+/* ===== Contenedor principal ===== */
+.container {
+    padding-top: 70px; /* espacio para banner */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ===== Card de portada ===== */
+.card {
+    background-color: #1f1f1f;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    margin: 20px 0;
+    padding: 10px;
+    max-width: 380px;
+    width: 90%;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+/* ===== Playlist ===== */
+#playlist {
+    list-style: none;
+    padding: 0;
+    max-width: 400px;
+    width: 90%;
+    margin: 0 auto 20px auto;
+}
+
+#playlist li {
+    background-color: #1a1a1a;
+    margin: 6px 0;
+    padding: 10px 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+#playlist li:hover {
+    background-color: #333;
+    transform: translateX(5px);
+}
+
+#playlist li i {
+    margin-right: 12px;
+    color: #ff4c4c;
+    font-size: 1rem;
+}
+
+#playlist li.current-song {
+    background: linear-gradient(90deg, #ff4c4c, #ff7b7b);
+    color: #fff;
+    font-weight: 600;
+}
+
+/* ===== Audio Player ===== */
+#audioPlayer {
+    width: 320px;
+    max-width: 90%;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+/* ===== Créditos ===== */
+.credits {
+    max-width: 400px;
+    width: 90%;
+    background-color: #1f1f1f;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.credits i {
+    display: block;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* ===== Responsive ===== */
+@media(max-width: 450px) {
+    .banner h2 { font-size: 1rem; }
+    .card { max-width: 90%; }
+    #playlist { max-width: 90%; }
+    #audioPlayer { width: 90%; }
+    .credits { max-width: 90%; }
+}
+</style>
 </head>
-<br><hr><br>
-<div align="center"><a href="021.jpg" target="_blank"><img class="circular-square" width="380" src="021.jpg"></a></div><br>
-<center>
-<body bgcolor="#166866">
-    
-    <audio src="" controls autoplay="" id="audioPlayer">
-        Sorry, your browser doesn't support html5!
+<body>
+
+<div class="banner">
+    <button onclick="history.back()">Atrás</button>
+    <h2>Soy (2014)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+</div>
+
+<div class="container">
+    <!-- Portada -->
+    <div class="card">
+        <a href="021.jpg" target="_blank">
+            <img src="021.jpg" alt="Portada Disco 021">
+        </a>
+    </div>
+
+    <!-- Audio Player -->
+    <audio src="" controls autoplay id="audioPlayer">
+        Tu navegador no soporta HTML5 audio.
     </audio>
+
+    <!-- Playlist -->
     <ul id="playlist">
-        <li class="current-song"><a href="01 Intro.mp3">Intro</a></li>
-<li><a href="02 Amasando.mp3">Amasando</a></li>
-<li><a href="03 Duda existencial.mp3">Duda existencial</a></li>
-<li><a href="04 Las cosas se hacen solas.mp3">Las cosas se hacen solas</a></li>
-<li><a href="05 Espectro.mp3">Espectro</a></li>
-<li><a href="06 Caminar.mp3">Caminar</a></li>
-<li><a href="07 Melodía triste.mp3">Melodía triste</a></li>
-<li><a href="08 Me trajo hasta aquí.mp3">Me trajo hasta aquí</a></li>
-
+        <li class="current-song"><i class="fas fa-music"></i> Intro</li>
+        <li><i class="fas fa-music"></i> Amasando</li>
+        <li><i class="fas fa-music"></i> Duda existencial</li>
+        <li><i class="fas fa-music"></i> Las cosas se hacen solas</li>
+        <li><i class="fas fa-music"></i> Espectro</li>
+        <li><i class="fas fa-music"></i> Caminar</li>
+        <li><i class="fas fa-music"></i> Melodía triste</li>
+        <li><i class="fas fa-music"></i> Me trajo hasta aquí</li>
     </ul>
-    <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
-    <script src="audioPlayer.js"></script>
-    <script>
-        // loads the audio player
-        audioPlayer();
-    </script>
+
+    <!-- Créditos -->
+    <div class="credits">
+        La introducción fue pronunciada por Victoria Contard. El tema 7 fue creado por Valentino Contard.<br>
+        El tema 9 lo armamos y cantamos juntos por primera vez con Marisol Allois.<br>
+        Todo lo demás fue escrito, interpretado, capturado y masterizado por Ricardo Contard en Estudio 1000,<br>
+        en Concepción del Uruguay, en Junio de 2014. Reservados todos los derechos de propiedad.
+        <i>Disco es cultura. No lo hagan en sus casas, cómprenlo hecho!</i>
+    </div>
+</div>
+
+<script>
+// ===== Script playlist interactiva con autoplay =====
+function audioPlayer() {
+    let currentSong = 0;
+    const audio = document.getElementById('audioPlayer');
+    const playlistItems = document.querySelectorAll('#playlist li');
+
+    // Lista de canciones
+    const songs = [
+        "01 Intro.mp3",
+        "02 Amasando.mp3",
+        "03 Duda existencial.mp3",
+        "04 Las cosas se hacen solas.mp3",
+        "05 Espectro.mp3",
+        "06 Caminar.mp3",
+        "07 Melodía triste.mp3",
+        "08 Me trajo hasta aquí.mp3"
+    ];
+
+    // Reproducir primera canción al cargar
+    audio.src = songs[currentSong];
+    audio.play();
+
+    // Click en playlist
+    playlistItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            audio.src = songs[index];
+            audio.play();
+            playlistItems.forEach(li => li.classList.remove('current-song'));
+            item.classList.add('current-song');
+            currentSong = index;
+        });
+    });
+
+    // Al terminar canción, reproducir siguiente
+    audio.addEventListener('ended', () => {
+        currentSong = (currentSong + 1) % songs.length;
+        audio.src = songs[currentSong];
+        audio.play();
+        playlistItems.forEach(li => li.classList.remove('current-song'));
+        playlistItems[currentSong].classList.add('current-song');
+    });
+}
+
+// Inicializar al cargar
+audioPlayer();
+</script>
+
 </body>
-<br><br><hr><font size="4" color="#FCF3CF"><p align="center">La introducción fue pronunciada por Victoria Contard. El tema 7 fue creado por Valentino Contard.<br>
-
-El tema 9 lo armamos y cantamos juntos por primera vez con Marisol Allois.<br>
-
-Todo lo demás fue escrito, interpretado, capturado y masterizado por Ricardo Contard en Estudio 1000,<br>
-
-en Concepción del Uruguay, en Junio de 2014. Reservados todos los derechos de propiedad.<br>
-<br><i>
-Disco es cultura.
-No lo hagan en sus casas, cómprenlo hecho! </i><br><br></p></font>
-</center>
 </html>
