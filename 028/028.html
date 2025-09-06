@@ -1,72 +1,264 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-	    
-		#playlist{
-            list-style: none;
-        }
-        #playlist li a{
-            color:white;
-            text-decoration: none;
-			font-family: Arial, Helvetica, sans-serif;
-        }
-        #playlist .current-song a{
-            color:#87CEFA;
-			font-weight: 900;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Disco 28</title>
 
-.circular-square {
-  border-radius: 3%;
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- Font Awesome para iconos musicales -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    color: #f5f5f5;
 }
-    </style>
-<link rel="stylesheet" href="fuentes.css">
-</head>
-<br><hr><br>
-<div align="center"><a href="028.jpg" target="_blank"><img class="circular-square" width="380" src="028.jpg"></a></div><br>
-<center>
-<body bgcolor="#166866">
-<body>
-    
-    <audio src="" controls autoplay="" id="audioPlayer">
-        Sorry, your browser doesn't support html5!
-    </audio>
-    <ul id="playlist">
-        <li class="current-song"><a href="01 - Conjuro.mp3">Conjuro</a></li>
-<li><a href="02 - Pinochetto.mp3">Pinochetto</a></li>
-<li><a href="03 - Que ves el cielo.mp3">Que ves el cielo</a></li>
-<li><a href="04 - Estoy bien.mp3">Estoy bien</a></li>
-<li><a href="05 - Golpendo en las puertas del Cielo.mp3">Golpeando en las puertas del Cielo</a></li>
-<li><a href="06 - Prestame.mp3">Prestame</a></li>
-<li><a href="07 - Volar.mp3">Volar</a></li>
-<li><a href="08 - Un poco de comprensión.mp3">Un poco de comprensión</a></li>
-<li><a href="09 - Adentro.mp3">Adentro</a></li>
-<li><a href="10 - No se acaba.mp3">No se acaba</a></li>
-<li><a href="11 - Al Gaucho Mercié.mp3">Al Gaucho Mercié</a></li>
-<li><a href="12 - Amasando.mp3">Amasando</a></li>
-<li><a href="13 - Cuento.mp3">Cuento</a></li>
 
+/* Banner fijo superior */
+.banner {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #1f1f1f;
+    color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.6);
+    z-index: 1000;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.banner h2 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.banner button {
+    background-color: #ff4c4c;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.banner button:hover {
+    background-color: #e04343;
+}
+
+/* Contenedor principal */
+.container {
+    padding-top: 70px; /* espacio para banner */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Card de portada */
+.card {
+    background-color: #1f1f1f;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    margin: 20px 0;
+    padding: 10px;
+    max-width: 380px;
+    width: 90%;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+/* Playlist */
+#playlist {
+    list-style: none;
+    padding: 0;
+    max-width: 400px;
+    width: 90%;
+    margin: 0 auto 20px auto;
+}
+
+#playlist li {
+    background-color: #1a1a1a;
+    margin: 6px 0;
+    padding: 10px 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+#playlist li:hover {
+    background-color: #333;
+    transform: translateX(5px);
+}
+
+#playlist li i {
+    margin-right: 12px;
+    color: #ff4c4c;
+    font-size: 1rem;
+}
+
+#playlist li.current-song {
+    background: linear-gradient(90deg, #ff4c4c, #ff7b7b);
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Audio Player */
+#audioPlayer {
+    width: 320px;
+    max-width: 90%;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+/* Créditos / texto */
+.credits {
+    max-width: 400px;
+    width: 90%;
+    background-color: #1f1f1f;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.credits i {
+    display: block;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.credits h3 {
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media(max-width: 450px) {
+    .banner h2 { font-size: 1rem; }
+    .card { max-width: 90%; }
+    #playlist { max-width: 90%; }
+    #audioPlayer { width: 90%; }
+    .credits { max-width: 90%; }
+}
+</style>
+</head>
+<body>
+
+<div class="banner">
+    <button onclick="history.back()">Atrás</button>
+    <h2>Pinochetto (2019)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+</div>
+
+<div class="container">
+    <!-- Portada -->
+    <div class="card">
+        <a href="028.jpg" target="_blank">
+            <img src="028.jpg" alt="Portada Disco 028">
+        </a>
+    </div>
+
+    <!-- Audio Player -->
+    <audio src="" controls autoplay id="audioPlayer">
+        Tu navegador no soporta HTML5 audio.
+    </audio>
+
+    <!-- Playlist -->
+    <ul id="playlist">
+        <li class="current-song"><i class="fas fa-music"></i> Conjuro</li>
+        <li><i class="fas fa-music"></i> Pinochetto</li>
+        <li><i class="fas fa-music"></i> Que ves el cielo</li>
+        <li><i class="fas fa-music"></i> Estoy bien</li>
+        <li><i class="fas fa-music"></i> Golpeando en las puertas del Cielo</li>
+        <li><i class="fas fa-music"></i> Prestame</li>
+        <li><i class="fas fa-music"></i> Volar</li>
+        <li><i class="fas fa-music"></i> Un poco de comprensión</li>
+        <li><i class="fas fa-music"></i> Adentro</li>
+        <li><i class="fas fa-music"></i> No se acaba</li>
+        <li><i class="fas fa-music"></i> Al Gaucho Mercié</li>
+        <li><i class="fas fa-music"></i> Amasando</li>
+        <li><i class="fas fa-music"></i> Cuento</li>
     </ul>
-    <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
-    <script src="audioPlayer.js"></script>
-    <script>
-        // loads the audio player
-        audioPlayer();
-    </script>
+
+    <!-- Créditos / texto -->
+    <div class="credits">
+        <i>“El Niño Jesús, de cinco años de edad, jugaba en el vado de un arroyo, y traía las aguas corrientes y las tornaba puras.
+        Y amasando barro, formó doce gorriones, un día sábado. Había allí otros muchos niños, que jugaban con Él. 
+        Un judío, que había notado lo que hacía, fue a comunicárselo a su padre José... [Fragmento del Evangelio Apócrifo de Sto. Tomás, redacción griega]</i>
+        <h3>Estas 12 canciones están dedicadas a mi familia; quienes aún VIVEN la música y el amor conmigo. (R.C.)</h3>
+    </div>
+</div>
+
+<script>
+// ===== Script playlist interactiva con autoplay =====
+function audioPlayer() {
+    let currentSong = 0;
+    const audio = document.getElementById('audioPlayer');
+    const playlistItems = document.querySelectorAll('#playlist li');
+
+    const songs = [
+        "01 - Conjuro.mp3",
+        "02 - Pinochetto.mp3",
+        "03 - Que ves el cielo.mp3",
+        "04 - Estoy bien.mp3",
+        "05 - Golpendo en las puertas del Cielo.mp3",
+        "06 - Prestame.mp3",
+        "07 - Volar.mp3",
+        "08 - Un poco de comprensión.mp3",
+        "09 - Adentro.mp3",
+        "10 - No se acaba.mp3",
+        "11 - Al Gaucho Mercié.mp3",
+        "12 - Amasando.mp3",
+        "13 - Cuento.mp3"
+    ];
+
+    // Reproducir primera canción al cargar
+    audio.src = songs[currentSong];
+    audio.play();
+
+    // Click en playlist
+    playlistItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            audio.src = songs[index];
+            audio.play();
+            playlistItems.forEach(li => li.classList.remove('current-song'));
+            item.classList.add('current-song');
+            currentSong = index;
+        });
+    });
+
+    // Al terminar canción, reproducir siguiente
+    audio.addEventListener('ended', () => {
+        currentSong = (currentSong + 1) % songs.length;
+        audio.src = songs[currentSong];
+        audio.play();
+        playlistItems.forEach(li => li.classList.remove('current-song'));
+        playlistItems[currentSong].classList.add('current-song');
+    });
+}
+
+// Inicializar al cargar
+audioPlayer();
+</script>
+
 </body>
-<br><br><hr><font color="#FCF3CF" size="4"><p align="center"><i>“El Niño Jesús, de cinco años de edad, jugaba en el vado de un arroyo, y traía las aguas corrientes y las tornaba puras.<br>
-Y amasando barro, formó doce gorriones, un día sábado. Había allí otros muchos niños, que jugaban con Él.<br>
-Un judío, que había notado lo que hacía, fue a comunicárselo a su padre José, diciéndole:<br>
-”Tu hijo está cerca del arroyo, y con barro ha compuesto doce gorriones, profanando el sábado”.<br>
-José se dirigió al lugar, lo vio, y le gritó: ”¿Por qué haces, en día de sábado, lo que no está permitido hacer?”<br>
-Pero Jesús, dando una palmada, y dirigiéndose a los gorriones, exclamó: “Volad”.<br>
-Y los pájaros abrieron sus alas, y volaron, piando con estruendo.”<br>
-<br></i>
-[Fragmento del Evangelio Apócrifo de Sto. Tomás, redacción griega]<br><br>
-<h3>Estas 12 canciones están dedicadas a mi familia; quienes aún VIVEN la música y el amor conmigo. (R.C.)
-</h3>
-</p></font>
-</center>
 </html>
