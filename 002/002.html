@@ -1,59 +1,225 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        #playlist{
-            list-style: none;
-        }
-        #playlist li a{
-            color:white;
-            text-decoration: none;
-			font-family: Arial, Helvetica, sans-serif;
-        }
-        #playlist .current-song a{
-            color:#87CEFA;
-			font-weight: 900;
-			
- #circular--square {
-  border-radius: 3%;}
-    </style>
-<link rel="stylesheet" href="fuentes.css">       
-	
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disco 2</title>
+
+  <!-- Fuente moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #eee;
+      text-align: center;
+    }
+
+    /* Mini Banner */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      background: rgba(0,0,0,0.7);
+      padding: 12px 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      margin: 0 auto;
+      font-size: 1.2rem;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .back-btn {
+      background: #ff9800;
+      color: #111;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .back-btn:hover {
+      background: #ffc107;
+      transform: translateY(-2px);
+    }
+
+    /* Portada */
+    .album-cover {
+      margin: 40px auto 20px;
+      max-width: 400px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+      transition: transform 0.3s ease;
+    }
+    .album-cover:hover {
+      transform: scale(1.03);
+    }
+    .album-cover img {
+      width: 100%;
+      display: block;
+    }
+
+    /* Reproductor */
+    audio {
+      margin: 20px auto;
+      width: 90%;
+      max-width: 600px;
+      border-radius: 8px;
+      background: #111;
+    }
+
+    /* Playlist */
+    #playlist {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 20px auto;
+      text-align: left;
+    }
+    #playlist li {
+      background: rgba(255,255,255,0.05);
+      margin: 6px 0;
+      padding: 12px 16px;
+      border-radius: 8px;
+      transition: background 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    #playlist li:hover {
+      background: rgba(255,255,255,0.15);
+      cursor: pointer;
+    }
+    #playlist li a {
+      color: #eee;
+      text-decoration: none;
+      flex: 1;
+    }
+    #playlist li::before {
+      content: "🎵";
+      font-size: 1.2rem;
+    }
+    #playlist .current-song {
+      background: #ff9800;
+      color: #111;
+      font-weight: 600;
+    }
+    #playlist .current-song a {
+      color: #111;
+    }
+
+    /* Duración */
+    .duration {
+      font-size: 0.9rem;
+      color: #bbb;
+      min-width: 50px;
+      text-align: right;
+    }
+
+    /* Créditos */
+    .credits {
+      max-width: 800px;
+      margin: 40px auto;
+      background: rgba(0,0,0,0.4);
+      padding: 20px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+  </style>
 </head>
-<br><hr><br>
-<div align="center"><a href="002.jpg" target="_blank"><img class="circular--square" width="380" src="002.jpg"></a></div><br>
-<center>
-<body bgcolor="#166866">
-    
-    <audio src="" controls autoplay="" id="audioPlayer">
-        Sorry, your browser doesn't support html5!
-    </audio>
-    <ul id="playlist">
-        <li class="current-song"><a href="01 Mi alma es como el viento.mp3">Mi alma es como el viento</a></li>
-        <li><a href="02 El portero José.mp3">El portero José</a></li>
-        <li><a href="02 Aún cuando no estás.mp3">Aún cuando no estás</a></li>
-		<li><a href="03 Combinación.mp3">Combinación</a></li>
-		<li><a href="04 Hay un lugar.mp3">Hay un lugar</a></li>
-		<li><a href="05 Por favor.mp3">Por favor</a></li>
-		<li><a href="06 Suavemente.mp3">Suavemente</a></li>
-		<li><a href="07 Espacio para amar.mp3"></a></li>
-		<li><a href="08 Míralos.mp3">Míralos</a></li>
-		<li><a href="09 Canción para cantar el Día del Amigo.mp3">Canción para cantar el Día del Amigo</a></li>
-		<li><a href="10 Generación del 2000.mp3">Generación del 2000</a></li>
-		<li><a href="11 Esperar esperar.mp3">Esperar, esperar</a></li>
-		<li><a href="12 La nada.mp3">La nada</a></li>
-		<li><a href="13 Necesario es.mp3">Necesario es</a></li>
-		<li><a href="14 Yo te fui a buscar.mp3">Yo te fui a buscar</a></li>
-    </ul>
-    <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
-    <script src="audioPlayer.js"></script>
-    <script>
-        // loads the audio player
-        audioPlayer();
-    </script>
+<body>
+
+  <!-- Mini banner con botón atrás -->
+  <header>
+    <button class="back-btn" onclick="window.history.back()">⬅ Atrás</button>
+    <h1>Como el viento (2004)</h1>
+  </header>
+
+  <!-- Portada -->
+  <div class="album-cover">
+    <a href="002.jpg" target="_blank">
+      <img src="002.jpg" alt="Portada del disco">
+    </a>
+  </div>
+
+  <!-- Reproductor -->
+  <audio src="" controls autoplay id="audioPlayer">
+    Sorry, your browser doesn't support HTML5!
+  </audio>
+
+  <!-- Playlist -->
+  <ul id="playlist">
+    <li class="current-song"><a href="01 Mi alma es como el viento.mp3">Mi alma es como el viento</a><span class="duration"></span></li>
+    <li><a href="02 El portero José.mp3">El portero José</a><span class="duration"></span></li>
+    <li><a href="02 Aún cuando no estás.mp3">Aún cuando no estás</a><span class="duration"></span></li>
+    <li><a href="03 Combinación.mp3">Combinación</a><span class="duration"></span></li>
+    <li><a href="04 Hay un lugar.mp3">Hay un lugar</a><span class="duration"></span></li>
+    <li><a href="05 Por favor.mp3">Por favor</a><span class="duration"></span></li>
+    <li><a href="06 Suavemente.mp3">Suavemente</a><span class="duration"></span></li>
+    <li><a href="07 Espacio para amar.mp3">Espacio para amar</a><span class="duration"></span></li>
+    <li><a href="08 Míralos.mp3">Míralos</a><span class="duration"></span></li>
+    <li><a href="09 Canción para cantar el Día del Amigo.mp3">Canción para cantar el Día del Amigo</a><span class="duration"></span></li>
+    <li><a href="10 Generación del 2000.mp3">Generación del 2000</a><span class="duration"></span></li>
+    <li><a href="11 Esperar esperar.mp3">Esperar, esperar</a><span class="duration"></span></li>
+    <li><a href="12 La nada.mp3">La nada</a><span class="duration"></span></li>
+    <li><a href="13 Necesario es.mp3">Necesario es</a><span class="duration"></span></li>
+    <li><a href="14 Yo te fui a buscar.mp3">Yo te fui a buscar</a><span class="duration"></span></li>
+  </ul>
+
+  <!-- Créditos -->
+  <div class="credits">
+    <p>
+      Todos los temas arreglados e interpretados por Ricardo Contard, excepto el 1: arreglado por Rodolfo Magdalena.<br>
+      Revolución es: Ariel Gianera, Héctor Conte y Ricardo Contard.<br>
+      La Vanguardia es: "Tito" Sánchez y Ricardo Contard.<br><br>
+      <i>Gracias a mami que me regaló mi primer guitarra;<br>y todos los que nunca se opusieron a esto</i>
+    </p>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+  <script src="audioPlayer.js"></script>
+  <script>
+    // Inicia el reproductor
+    audioPlayer();
+
+    // Función para convertir segundos a mm:ss
+    function formatTime(seconds) {
+      const min = Math.floor(seconds / 60);
+      const sec = Math.floor(seconds % 60);
+      return `${min}:${sec < 10 ? '0' : ''}${sec}`;
+    }
+
+    // Recorre cada canción y obtiene su duración
+    document.querySelectorAll('#playlist li').forEach(li => {
+      const link = li.querySelector('a');
+      const durationSpan = li.querySelector('.duration');
+      const audio = new Audio(link.getAttribute('href'));
+
+      audio.addEventListener('loadedmetadata', () => {
+        durationSpan.textContent = formatTime(audio.duration);
+      });
+    });
+  </script>
+
 </body>
-<font color="white"><br><br><hr><p align="center">Todos los temas arreglados e interpretados por Ricardo Contard, excepto el 1: arreglado por Rodolfo Magdalena.<br>Revolución es: Ariel Gianera, Héctor Conte y Ricardo Contard.<br>La Vanguardia es: "Tito" Sánchez y Ricardo Contard<br><br><i>Gracias a mami que me regaló mi primer guitarra;<br>y todos los que nunca se opusieron a esto</i></p>
-</center></font>
 </html>
