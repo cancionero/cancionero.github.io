@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Disco 27</title>
     <style>
 	    
 		#playlist{
@@ -18,13 +19,58 @@
 .circular-square {
   border-radius: 3%;
 }
+
+/* Banner fijo superior */
+.banner {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #1f1f1f;
+    color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.6);
+    z-index: 1000;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.banner h2 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.banner button {
+    background-color: #ff4c4c;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.banner button:hover {
+    background-color: #e04343;
+}
+
+
     </style>
 <link rel="stylesheet" href="fuentes.css">
 </head>
+<body bgcolor="#166866">
+<div class="banner">
+    <button onclick="history.back()">Atrás</button>
+    <h2>La maleta (en vivo)(2017)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+</div>
 <br><hr><br>
 <div align="center"><a href="027.jpg" target="_blank"><img class="circular-square" width="380" src="027.jpg"></a></div><br>
 <center>
-<body bgcolor="#166866">
+
     
 <iframe src="https://drive.google.com/file/d/1oxizf9zMJG6KObRsbi-AYsRALuEDD3SZ/preview" width="360" height="60" allow="autoplay"></iframe>
 <br>
