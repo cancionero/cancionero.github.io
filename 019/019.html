@@ -1,67 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-	    
-		#playlist{
-            list-style: none;
-        }
-        #playlist li a{
-            color:white;
-            text-decoration: none;
-			font-family: Arial, Helvetica, sans-serif;
-        }
-        #playlist .current-song a{
-            color:#87CEFA;
-			font-weight: 900;
-        }
-
-.circular-square {
-  border-radius: 3%;
-}
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Disco 19</title>
 <link rel="stylesheet" href="fuentes.css">
+<style>
+    body {
+        background-color: #166866;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #FCF3CF;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+    .mini-banner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #144B50;
+        padding: 5px 15px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+    .mini-banner button {
+        background-color: #87CEFA;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    .card {
+        background-color: #1F8C91;
+        display: inline-block;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        margin-bottom: 15px;
+    }
+    .card img {
+        border-radius: 3%;
+        max-width: 100%;
+        height: auto;
+    }
+    #audioPlayer {
+        width: 90%;
+        max-width: 360px;
+        margin: 10px auto;
+    }
+    #playlist {
+        list-style: none;
+        padding: 0;
+        max-width: 400px;
+        margin: 0 auto 15px auto;
+        text-align: left;
+    }
+    #playlist li {
+        margin: 5px 0;
+    }
+    #playlist li a {
+        color: white;
+        text-decoration: none;
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #playlist li.current-song a {
+        color: #87CEFA;
+        font-weight: 900;
+    }
+    .credits {
+        max-width: 600px;
+        margin: 20px auto;
+        text-align: left;
+        line-height: 1.5em;
+        font-size: 0.95em;
+    }
+</style>
 </head>
-<br><hr><br>
-<div align="center"><a href="019.jpg" target="_blank"><img class="circular-square" width="380" src="019.jpg"></a></div><br>
-<center>
-<body bgcolor="#166866">
-    
-    <audio src="" controls autoplay="" id="audioPlayer">
-        Sorry, your browser doesn't support html5!
-    </audio>
-    <ul id="playlist">
-        <li class="current-song"><a href="01 Preludio.mp3">Preludio</a></li>
-<li><a href="02 Un bichito.mp3">Un bichito</a></li>
-<li><a href="03 Canción con vos.mp3">Canción con vos</a></li>
-<li><a href="04 Gente bonita.mp3">Gente bonita</a></li>
-<li><a href="05 Ven a cantar.mp3">Ven a cantar</a></li>
-<li><a href="06 Consagración de un alma joven.mp3">Consagración de un alma joven</a></li>
-<li><a href="07 Y no volver atrás.mp3">Y no volver atrás</a></li>
-<li><a href="08 Arde el fuego.mp3">Arde el fuego</a></li>
-<li><a href="09 Los visitantes.mp3">Los visitantes</a></li>
-<li><a href="10 Un mundo mejor.mp3">Un mundo mejor</a></li>
-<li><a href="11 Interludio.mp3">Interludio</a></li>
-<li><a href="12 Candombe de mucho palo.mp3">Candombe de mucho palo</a></li>
-<li><a href="13 Amuchunguanguanrrero.mp3">Amuchunguanguanrrero</a></li>
-<li><a href="14 Como pájaros en el aire.mp3">Como pájaros en el aire</a></li>
-<li><a href="15 De colores.mp3">De colores</a></li>
-<li><a href="16 La isla.mp3">La isla</a></li>
-<li><a href="17 La voz del camino.mp3">La voz del camino</a></li>
-<li><a href="18 En el fondo del mar.mp3">En el fondo del mar</a></li>
-<li><a href="19 Al compás de la ojota.mp3">Al compás de la ojota</a></li>
-<li><a href="20 Posludio.mp3">Posludio</a></li>
+<body>
 
-    </ul>
-    <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
-    <script src="audioPlayer.js"></script>
-    <script>
-        // loads the audio player
-        audioPlayer();
-    </script>
+<div class="mini-banner">
+    <button onclick="window.history.back()">Atrás</button>
+    <span>Diez años despues. Trébol (2013)</span>
+</div>
+
+<div class="card">
+    <a href="019.jpg" target="_blank"><img src="019.jpg" alt="Portada Disco 19"></a>
+</div>
+<br>
+<audio controls autoplay id="audioPlayer">
+    Sorry, your browser doesn't support HTML5 audio.
+</audio>
+
+<ul id="playlist">
+    <li class="current-song"><a href="01 Preludio.mp3">🎵 Preludio</a></li>
+    <li><a href="02 Un bichito.mp3">🎵 Un bichito</a></li>
+    <li><a href="03 Canción con vos.mp3">🎵 Canción con vos</a></li>
+    <li><a href="04 Gente bonita.mp3">🎵 Gente bonita</a></li>
+    <li><a href="05 Ven a cantar.mp3">🎵 Ven a cantar</a></li>
+    <li><a href="06 Consagración de un alma joven.mp3">🎵 Consagración de un alma joven</a></li>
+    <li><a href="07 Y no volver atrás.mp3">🎵 Y no volver atrás</a></li>
+    <li><a href="08 Arde el fuego.mp3">🎵 Arde el fuego</a></li>
+    <li><a href="09 Los visitantes.mp3">🎵 Los visitantes</a></li>
+    <li><a href="10 Un mundo mejor.mp3">🎵 Un mundo mejor</a></li>
+    <li><a href="11 Interludio.mp3">🎵 Interludio</a></li>
+    <li><a href="12 Candombe de mucho palo.mp3">🎵 Candombe de mucho palo</a></li>
+    <li><a href="13 Amuchunguanguanrrero.mp3">🎵 Amuchunguanguanrrero</a></li>
+    <li><a href="14 Como pájaros en el aire.mp3">🎵 Como pájaros en el aire</a></li>
+    <li><a href="15 De colores.mp3">🎵 De colores</a></li>
+    <li><a href="16 La isla.mp3">🎵 La isla</a></li>
+    <li><a href="17 La voz del camino.mp3">🎵 La voz del camino</a></li>
+    <li><a href="18 En el fondo del mar.mp3">🎵 En el fondo del mar</a></li>
+    <li><a href="19 Al compás de la ojota.mp3">🎵 Al compás de la ojota</a></li>
+    <li><a href="20 Posludio.mp3">🎵 Posludio</a></li>
+</ul>
+
+<div class="card">
+    <a href="019b.jpg" target="_blank"><img src="019b.jpg" alt="Contraportada Disco 19"></a>
+</div>
+
+<div class="credits">
+<p>Grabación y producción de todos los temas: Ricardo Contard.<br>
+Este disco refleja momentos de inspiración y tradiciones musicales, con la intención de compartir emociones, historias y recuerdos con el oyente.<br>
+Agradecimientos especiales a todos los colaboradores, familiares y amigos que hicieron posible este proyecto.</p>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+<script src="audioPlayer.js"></script>
+<script>
+    audioPlayer();
+</script>
+
 </body>
-<div align="center"><a href="019b.jpg" target="_blank"><img src="019b.jpg" width="380"></a></div><br>
-</center>
 </html>
