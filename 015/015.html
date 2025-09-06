@@ -1,52 +1,153 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-	    
-		#playlist{
-            list-style: none;
-        }
-        #playlist li {
-            color:white;
-            text-decoration: none;
-			font-family: Arial, Helvetica, sans-serif;
-        }
-        
-
-.circular-square {
-  border-radius: 3%;
-}
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Disco 15</title>
 <link rel="stylesheet" href="fuentes.css">
+
+<style>
+body {
+    background-color: #166866;
+    color: #FCF3CF;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.album-cover {
+    margin: 40px auto 20px;
+    width: 380px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+}
+
+.album-cover img {
+    width: 100%;
+    display: block;
+}
+
+iframe {
+    margin: 20px auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+#playlist {
+    list-style: none;
+    padding: 0;
+    max-width: 500px;
+    margin: 20px auto;
+    text-align: left;
+}
+
+#playlist li {
+    background: rgba(255,255,255,0.05);
+    margin: 6px 0;
+    padding: 10px 14px;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+#playlist li:hover {
+    background: rgba(255,255,255,0.15);
+    cursor: default;
+}
+
+#playlist .current-song {
+    background: #ff9800;
+    color: #111;
+    font-weight: 600;
+}
+
+.credits {
+    max-width: 800px;
+    margin: 30px auto;
+    background: rgba(0,0,0,0.4);
+    padding: 20px;
+    border-radius: 12px;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      background: rgba(0,0,0,0.7);
+      padding: 12px 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      margin: 0 auto;
+      font-size: 1.2rem;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .back-btn {
+      background: #ff9800;
+      color: #111;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .back-btn:hover {
+      background: #ffc107;
+      transform: translateY(-2px);
+    }
+</style>
 </head>
-<br><hr><br>
-<div align="center"><a href="015.jpg" target="_blank"><img class="circular-square" width="380" src="015.jpg"></a></div><br>
-<center>
-<body bgcolor="#166866">
-    
-    <iframe src="https://drive.google.com/file/d/1ecbS0zyQaX1gCSZDnzCCzAbQ9Rtscqzs/preview" width="360" height="60" allow="autoplay"></iframe>
-    <ul id="playlist">
-<li>Canción por la paz</a></li>
-<li>Amasando un verso</a></li>
-<li>A cada hombre a cada mujer *</a></li>
-<li>En la vereda</a></li>
-<li>Sin embargos</a></li>
-<li>Me trajo hasta aquí</a></li>
-<li>Es mentira si digo...</a></li>
-<li>Estoy bien</a></li>
-<li>Necesito **</a></li>
-<li>Cuento del árbol</a></li>
-<li>Natalio Ruiz ***</a></li>
-<li>Lilí ****</a></li>
-    </ul>
-    <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+
+<body>
+<header>
+    <button class="back-btn" onclick="window.history.back()">⬅ Atrás</button>
+    <h1>En vivo (31-10-2010)</h1>
+  </header>
+  
+<div class="album-cover">
+    <a href="015.jpg" target="_blank"><img src="015.jpg" alt="Portada disco 15"></a>
+</div>
+
+<iframe src="https://drive.google.com/file/d/1ecbS0zyQaX1gCSZDnzCCzAbQ9Rtscqzs/preview" width="360" height="60" allow="autoplay"></iframe>
+
+<ul id="playlist">
+    <li class="current-song">Canción por la paz</li>
+    <li>Amasando un verso</li>
+    <li>A cada hombre a cada mujer *</li>
+    <li>En la vereda</li>
+    <li>Sin embargos</li>
+    <li>Me trajo hasta aquí</li>
+    <li>Es mentira si digo...</li>
+    <li>Estoy bien</li>
+    <li>Necesito **</li>
+    <li>Cuento del árbol</li>
+    <li>Natalio Ruiz ***</li>
+    <li>Lilí ****</li>
+</ul>
+
+<div class="credits">
+    <p>
+    Grabado el 31/10/2010 en el Auditorio “C. M. Scelzi” como parte del Homenaje a Linares Cardozo.<br>
+    Compositor de todos los temas: Ricardo Contard; excepto los siguientes:<br>
+    * de Pedro Aznar, ** y *** de Charly García; **** de Luis M. Pescetti.<br><br>
+    Amplificación y mezcla: “Times Sonido”. Grabación y Masterización: Ricardo Contard.
+    </p>
+</div>
+
 </body>
-<br><br><hr><font color="#FCF3CF"><p align="center"><br>
-Grabado el 31/10/2010 en el Auditorio “C. M. Scelzi” como parte del Homenaje a Linares Cardozo.<br>
-Compositor de todos los temas: Ricardo Contard; excepto los siguientes:<br>
-* de Pedro Aznar, ** y *** de Charly García; **** de Luis M. Pescetti.<br><br>
-Amplificación y mezcla: “Times Sonido”. Grabación y Masterización: Ricardo Contard.<br></p></font>
-</center>
 </html>
