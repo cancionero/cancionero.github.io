@@ -1,97 +1,280 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-	    
-		#playlist{
-            list-style: none;
-        }
-        #playlist li a{
-            color:white;
-            text-decoration: none;
-			font-family: Arial, Helvetica, sans-serif;
-        }
-        #playlist .current-song a{
-            color:#87CEFA;
-			font-weight: 900;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Disco 29</title>
 
-.circular-square {
-  border-radius: 3%;
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- Font Awesome para iconos musicales -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    color: #f5f5f5;
 }
-    </style>
-<link rel="stylesheet" href="fuentes.css">
-</head>
-<br><hr><br>
-<div align="center"><a href="029.jpg" target="_blank"><img class="circular-square" width="380" src="029.jpg"></a></div><br>
-<center>
-<body bgcolor="#166866">
-    
-    <audio src="" controls autoplay="" id="audioPlayer">
-        Sorry, your browser doesn't support html5!
-    </audio>
-    <ul id="playlist">
-        <li class="current-song"><a href="01 - Diana de Gloria.mp3">Diana de gloria</a></li>
-<li><a href="02 - Maestro islero.mp3">Maestro islero</a></li>
-<li><a href="03 - Creo.mp3">Creo</a></li>
-<li><a href="04 - Buscando paz.mp3">Buscando paz</a></li>
-<li><a href="05 - Gloriosa San José de Gualeguaychú.mp3">Gloriosa San José de Gualeguaychú</a></li>
-<li><a href="06 - La tierra del olvido.mp3">La tierra del olvido</a></li>
-<li><a href="07 - Nicasio Ojeda.mp3">Nicasio Ojeda</a></li>
-<li><a href="08 - Prohibido olvidar.mp3">Prohibido olvidar</a></li>
-<li><a href="09 - Una foto.mp3">Una foto</a></li>
-<li><a href="10 - Viejo solo y borracho.mp3">Viejo solo y borracho</a></li>
-<li><a href="11 - Blues de la circulación.mp3">Blues de la circulación</a></li>
-<li><a href="12 - Inventario.mp3">Inventario</a></li>
-<li><a href="13 - Oda a los bibliotecarios.mp3">Oda a los bibliotecarios</a></li>
-<li><a href="14 - Por una escalerita.mp3">Por una escalerita</a></li>
-<li><a href="15 - Sobre el arco iris.mp3">Sobre el arco iris</a></li>
-<li><a href="16 - Yo quiero ser.mp3">Yo quiero ser</a></li>
 
+/* Banner fijo superior */
+.banner {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #1f1f1f;
+    color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.6);
+    z-index: 1000;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.banner h2 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.banner button {
+    background-color: #ff4c4c;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.banner button:hover {
+    background-color: #e04343;
+}
+
+/* Contenedor principal */
+.container {
+    padding-top: 70px; /* espacio para banner */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Card de portada */
+.card {
+    background-color: #1f1f1f;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    margin: 20px 0;
+    padding: 10px;
+    max-width: 380px;
+    width: 90%;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+/* Playlist */
+#playlist {
+    list-style: none;
+    padding: 0;
+    max-width: 400px;
+    width: 90%;
+    margin: 0 auto 20px auto;
+}
+
+#playlist li {
+    background-color: #1a1a1a;
+    margin: 6px 0;
+    padding: 10px 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+#playlist li:hover {
+    background-color: #333;
+    transform: translateX(5px);
+}
+
+#playlist li i {
+    margin-right: 12px;
+    color: #ff4c4c;
+    font-size: 1rem;
+}
+
+#playlist li.current-song {
+    background: linear-gradient(90deg, #ff4c4c, #ff7b7b);
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Audio Player */
+#audioPlayer {
+    width: 320px;
+    max-width: 90%;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+/* Créditos / texto */
+.credits {
+    max-width: 450px;
+    width: 90%;
+    background-color: #1f1f1f;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.credits i {
+    display: block;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.credits h3 {
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media(max-width: 450px) {
+    .banner h2 { font-size: 1rem; }
+    .card { max-width: 90%; }
+    #playlist { max-width: 90%; }
+    #audioPlayer { width: 90%; }
+    .credits { max-width: 90%; }
+}
+</style>
+</head>
+<body>
+
+<div class="banner">
+    <button onclick="history.back()">Atrás</button>
+    <h2>Edificio 21 (2020)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+</div>
+
+<div class="container">
+    <!-- Portada -->
+    <div class="card">
+        <a href="029.jpg" target="_blank">
+            <img src="029.jpg" alt="Portada Disco 029">
+        </a>
+    </div>
+
+    <!-- Audio Player -->
+    <audio src="" controls autoplay id="audioPlayer">
+        Tu navegador no soporta HTML5 audio.
+    </audio>
+
+    <!-- Playlist -->
+    <ul id="playlist">
+        <li class="current-song"><i class="fas fa-music"></i> Diana de gloria</li>
+        <li><i class="fas fa-music"></i> Maestro islero</li>
+        <li><i class="fas fa-music"></i> Creo</li>
+        <li><i class="fas fa-music"></i> Buscando paz</li>
+        <li><i class="fas fa-music"></i> Gloriosa San José de Gualeguaychú</li>
+        <li><i class="fas fa-music"></i> La tierra del olvido</li>
+        <li><i class="fas fa-music"></i> Nicasio Ojeda</li>
+        <li><i class="fas fa-music"></i> Prohibido olvidar</li>
+        <li><i class="fas fa-music"></i> Una foto</li>
+        <li><i class="fas fa-music"></i> Viejo solo y borracho</li>
+        <li><i class="fas fa-music"></i> Blues de la circulación</li>
+        <li><i class="fas fa-music"></i> Inventario</li>
+        <li><i class="fas fa-music"></i> Oda a los bibliotecarios</li>
+        <li><i class="fas fa-music"></i> Por una escalerita</li>
+        <li><i class="fas fa-music"></i> Sobre el arco iris</li>
+        <li><i class="fas fa-music"></i> Yo quiero ser</li>
     </ul>
-    <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
-    <script src="audioPlayer.js"></script>
-    <script>
-        // loads the audio player
-        audioPlayer();
-    </script>
+
+    <!-- Créditos / texto -->
+    <div class="credits">
+        <p><i>
+        1) Diana de gloria. Una pieza instrumental típica de las bandas militares, incluye fragmento de la jura de lealtad a la Bandera por parte de cadetes de Prefectura (2020)<br>
+        2) Maestro islero. Compuesta a pedido de Pachi Antivero para los docentes de Islas del Ibicuy (2018)<br>
+        3) Creo. Canción de Teresa Parodi recreada por el grupo “Río de Voces” (junto a Claudio Pérez, Nicolás Rizzo, Paola Izaguirre y Lisandro González. 2016)<br>
+        4) Buscando paz. Canción creada para un concurso para el Día Mundial de la Paz...<br>
+        ...<br>
+        16) Yo quiero ser. Grabación casera del primer ensayo de una canción compuesta especialmente para la Cantata Navideña en la Parroquia San Roque (2013)
+        </i></p>
+        <div class="card">
+            <a href="029b.jpg" target="_blank">
+                <img src="029b.jpg" alt="Reverso Disco 029">
+            </a>
+        </div>
+        <p><i>Paisaje que aparece en el reverso de la portada del disco (Barrio Luz, Ranelagh, Provincia de Buenos Aires, Argentina)</i></p>
+    </div>
+</div>
+
+<script>
+// ===== Script playlist interactiva con autoplay =====
+function audioPlayer() {
+    let currentSong = 0;
+    const audio = document.getElementById('audioPlayer');
+    const playlistItems = document.querySelectorAll('#playlist li');
+
+    const songs = [
+        "01 - Diana de Gloria.mp3",
+        "02 - Maestro islero.mp3",
+        "03 - Creo.mp3",
+        "04 - Buscando paz.mp3",
+        "05 - Gloriosa San José de Gualeguaychú.mp3",
+        "06 - La tierra del olvido.mp3",
+        "07 - Nicasio Ojeda.mp3",
+        "08 - Prohibido olvidar.mp3",
+        "09 - Una foto.mp3",
+        "10 - Viejo solo y borracho.mp3",
+        "11 - Blues de la circulación.mp3",
+        "12 - Inventario.mp3",
+        "13 - Oda a los bibliotecarios.mp3",
+        "14 - Por una escalerita.mp3",
+        "15 - Sobre el arco iris.mp3",
+        "16 - Yo quiero ser.mp3"
+    ];
+
+    // Reproducir primera canción al cargar
+    audio.src = songs[currentSong];
+    audio.play();
+
+    // Click en playlist
+    playlistItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            audio.src = songs[index];
+            audio.play();
+            playlistItems.forEach(li => li.classList.remove('current-song'));
+            item.classList.add('current-song');
+            currentSong = index;
+        });
+    });
+
+    // Al terminar canción, reproducir siguiente
+    audio.addEventListener('ended', () => {
+        currentSong = (currentSong + 1) % songs.length;
+        audio.src = songs[currentSong];
+        audio.play();
+        playlistItems.forEach(li => li.classList.remove('current-song'));
+        playlistItems[currentSong].classList.add('current-song');
+    });
+}
+
+// Inicializar al cargar
+audioPlayer();
+</script>
+
 </body>
-<br><br><hr><font size="4" color="#FCF3CF"><p align="center">
-1)	Diana de gloria. Una pieza instrumental típica de las bandas militares, incluye fragmento de la jura de lealtad a la Bandera por parte de cadetes de Prefectura (2020)
-<br>
-2)	Maestro islero. Compuesta a pedido de Pachi Antivero para los docentes de Islas del Ibicuy (2018)
-<br>
-3)	Creo. Canción de Teresa Parodi recreada por el grupo “Río de Voces” (junto a Claudio Pérez, Nicolás Rizzo, Paola Izaguirre y Lisandro González. 2016)
-<br>
-4)	Buscando paz. Canción creada para un concurso para el Día Mundial de la Paz, interpretada por alumnos de 6º grado de la Escuela 83 “Mesopotamia Argentina” junto al profesor de música Franco Fiorotto. 2017)
-<br>
-5)	Gloriosa San José de Gualeguaychú. Poema de Laura Silva interpretado junto a Claudio Spinoso
-<br>
-6)	La tierra del olvido. Una linda canción de Carlos Vives
-<br>
-7)	Nicasio Ojeda. Canción dedicada al Veterano de la Guerra de Malvinas del mismo nombre. Basada en un poema de Armando Antúnez
-<br>
-8)	Prohibido olvidar. Canción basada en otro poema de A. Antúnez dedicado a Nicasio Ojeda y a todos los excombatientes
-<br>
-9)	Una foto. Una versión inédita y casera de una antigua canción de amor
-<br>
-10) Viejo, solo y borracho. Canción de León Gieco al estilo de La Vanguardia, un dúo que formamos con mi primo Carlos “Tito” Sánchez
-<br>
-11) Blues de la circulación. Una perlita didáctica y cardíaca de antaño
-<br>
-12) Inventario. Canción dedicada a Marisol, cantada junto a Valentino Contard (aprox. 2010)
-<br>
-13) Oda a los bibliotecarios. Canción compuesta para el Acto del Día del Bibliotecario (13/09/2019)
-<br>
-14) Por una escalerita. Canción infantil a nuestra Bandera, en la voz de Valentino (aprox. 2010)
-<br>
-15) Sobre el arco iris. Versión libre del tema “Somewhere over the rainbow” del hawaiano Israel Kamakawiwo'ole
-<br>
-16) Yo quiero ser. Grabación casera del primer ensayo de una canción compuesta especialmente para la Cantata Navideña en la Parroquia San Roque (2013)
-<br></p>
-<div align="center"><a href="029b.jpg" target="_blank"><img src="029b.jpg" width="380"></a></div><br>
-<p align="center"><i>Paisaje que aparece en el reverso de la portada del disco (Barrio Luz, Ranelagh, Provincia de Buenos Aires, Argentina)</i></p></font>
-</center>
 </html>
