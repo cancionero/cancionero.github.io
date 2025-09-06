@@ -1,59 +1,226 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-	    
-		#playlist{
-            list-style: none;
-        }
-        #playlist li a{
-            color:white;
-            text-decoration: none;
-			font-family: Arial, Helvetica, sans-serif;
-        }
-        #playlist .current-song a{
-            color:#87CEFA;
-			font-weight: 900;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disco 8</title>
 
-.circular-square {
-  border-radius: 3%;
-}
-    </style>
-<link rel="stylesheet" href="fuentes.css">
+  <!-- Fuente moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #FCF3CF;
+      text-align: center;
+    }
+
+    /* Mini Banner */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      background: rgba(0,0,0,0.7);
+      padding: 12px 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      margin: 0 auto;
+      font-size: 1.2rem;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .back-btn {
+      background: #ff9800;
+      color: #111;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .back-btn:hover {
+      background: #ffc107;
+      transform: translateY(-2px);
+    }
+
+    /* Portada */
+    .album-cover {
+      margin: 40px auto 20px;
+      max-width: 400px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+      transition: transform 0.3s ease;
+    }
+    .album-cover:hover {
+      transform: scale(1.03);
+    }
+    .album-cover img {
+      width: 100%;
+      display: block;
+    }
+
+    /* Reproductor */
+    audio {
+      margin: 20px auto;
+      width: 90%;
+      max-width: 600px;
+      border-radius: 8px;
+      background: #111;
+    }
+
+    /* Playlist */
+    #playlist {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 20px auto;
+      text-align: left;
+    }
+    #playlist li {
+      background: rgba(255,255,255,0.05);
+      margin: 6px 0;
+      padding: 12px 16px;
+      border-radius: 8px;
+      transition: background 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    #playlist li:hover {
+      background: rgba(255,255,255,0.15);
+      cursor: pointer;
+    }
+    #playlist li a {
+      color: #FCF3CF;
+      text-decoration: none;
+      flex: 1;
+    }
+    #playlist li::before {
+      content: "🎵";
+      font-size: 1.2rem;
+    }
+    #playlist .current-song {
+      background: #ff9800;
+      color: #111;
+      font-weight: 600;
+    }
+    #playlist .current-song a {
+      color: #111;
+    }
+
+    /* Duración */
+    .duration {
+      font-size: 0.9rem;
+      color: #bbb;
+      min-width: 50px;
+      text-align: right;
+    }
+
+    /* Créditos / historia */
+    .credits {
+      max-width: 800px;
+      margin: 40px auto;
+      background: rgba(0,0,0,0.4);
+      padding: 20px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      text-align: justify;
+    }
+  </style>
 </head>
-<br><hr><br>
-<div align="center"><a href="008.jpg" target="_blank"><img class="circular-square" width="380" src="008.jpg"></a></div><br>
-<center>
-<body bgcolor="#166866">
-    
-    <audio src="" controls autoplay="" id="audioPlayer">
-        Sorry, your browser doesn't support html5!
-    </audio>
-    <ul id="playlist">
-        <li class="current-song"><a href="001 Canción por la paz.mp3">Canción por la paz</a></li>
-        <li><a href="002 Tu nombre.mp3">Tu nombre</a></li>
-<li><a href="003 Amasando un verso.mp3">Amasando un verso</a></li>
-<li><a href="004 Gente bonita.mp3">Gente bonita</a></li>
-<li><a href="005 En la vereda.mp3">En la vereda</a></li>
-<li><a href="006 A Colacho Arellano.mp3">A "Colacho" Arellano</a></li>
-<li><a href="007 Amo el camino.mp3">Amo el camino</a></li>
+<body>
 
-    </ul>
-    <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
-    <script src="audioPlayer.js"></script>
-    <script>
-        // loads the audio player
-        audioPlayer();
-    </script>
+  <!-- Mini banner con botón atrás -->
+  <header>
+    <button class="back-btn" onclick="window.history.back()">⬅ Atrás</button>
+    <h1>Volando por el éter (2008)</h1>
+  </header>
+
+  <!-- Portada principal -->
+  <div class="album-cover">
+    <a href="008.jpg" target="_blank">
+      <img src="008.jpg" alt="Portada del disco">
+    </a>
+  </div>
+
+  <!-- Reproductor -->
+  <audio src="" controls autoplay id="audioPlayer">
+    Sorry, your browser doesn't support HTML5!
+  </audio>
+
+  <!-- Playlist -->
+  <ul id="playlist">
+    <li class="current-song"><a href="001 Canción por la paz.mp3">Canción por la paz</a><span class="duration"></span></li>
+    <li><a href="002 Tu nombre.mp3">Tu nombre</a><span class="duration"></span></li>
+    <li><a href="003 Amasando un verso.mp3">Amasando un verso</a><span class="duration"></span></li>
+    <li><a href="004 Gente bonita.mp3">Gente bonita</a><span class="duration"></span></li>
+    <li><a href="005 En la vereda.mp3">En la vereda</a><span class="duration"></span></li>
+    <li><a href="006 A Colacho Arellano.mp3">A "Colacho" Arellano</a><span class="duration"></span></li>
+    <li><a href="007 Amo el camino.mp3">Amo el camino</a><span class="duration"></span></li>
+  </ul>
+
+  <!-- Créditos / historia -->
+  <div class="credits">
+    <p>
+      <i>
+      Según algunas teorías físicas, el éter es un fluido imponderable y elástico que llena todo el espacio,
+      penetra todos lo cuerpos, y por su movimiento vibratorio produce los fenómenos luminosos, caloríferos y eléctricos;...
+      y además debe servir como ambiente propicio para la transmisión de las ondas provenientes de la radiodifusión.
+      </i>
+    </p>
+    <p>
+      <h3>
+        Los fonogramas incluidos en esta compilación fueron emitidos por Frecuencia Modulada (FM "Sol" 106.5)
+        en la mañana del sábado 1º de Marzo de 2008 en Concepción del Uruguay,
+        durante el programa de Miguel Contard denominado "Mateando con el Gaucho"
+      </h3>
+    </p>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+  <script src="audioPlayer.js"></script>
+  <script>
+    // Inicia el reproductor
+    audioPlayer();
+
+    // Función para convertir segundos a mm:ss
+    function formatTime(seconds) {
+      const min = Math.floor(seconds / 60);
+      const sec = Math.floor(seconds % 60);
+      return `${min}:${sec < 10 ? '0' : ''}${sec}`;
+    }
+
+    // Recorre cada canción y obtiene su duración
+    document.querySelectorAll('#playlist li').forEach(li => {
+      const link = li.querySelector('a');
+      const durationSpan = li.querySelector('.duration');
+      const audio = new Audio(link.getAttribute('href'));
+
+      audio.addEventListener('loadedmetadata', () => {
+        durationSpan.textContent = formatTime(audio.duration);
+      });
+    });
+  </script>
+
 </body>
-<br><br><hr><font size="4" color="#FCF3CF"><p align="center"><i>Según algunas teorías físicas, el éter es un fluido imponderable y elástico que llena todo el espacio,<br>
-penetra todos lo cuerpos, y por su movimiento vibratorio produce los fenómenos luminosos, caloríferos y eléctricos;...<br>
-y además debe servir como ambiente propicio para la transmisión de las ondas provenientes de la radiodifusión.</i><br><br>
-<h3>Los fonogramas incluidos en esta compilación fueron emitidos por Frecuencia Modulada (FM "Sol" 106.5)<br>
-en la mañana del sábado 1º de Marzo de 2008 en Concepción del Uruguay,<br>
-durante el programa de Miguel Contard denominado "Mateando con el Gaucho"</h3><br></p></font>
-</center>
 </html>
