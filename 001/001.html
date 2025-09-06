@@ -1,60 +1,224 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-      
-		#playlist{
-            list-style: none;
-        }
-        #playlist li a{
-            color:white;
-            text-decoration: none;
-			
-        }
-        #playlist .current-song a{
-            color:#87CEFA;
-			font-weight: 900;
-        }
-.circular-square {
-  border-radius: 3%;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disco 1</title>
 
-    </style>
-<link rel="stylesheet" href="fuentes.css">
+  <!-- Fuente moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #eee;
+      text-align: center;
+    }
+
+    /* Mini Banner */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      background: rgba(0,0,0,0.7);
+      padding: 12px 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      margin: 0 auto;
+      font-size: 1.2rem;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .back-btn {
+      background: #ff9800;
+      color: #111;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .back-btn:hover {
+      background: #ffc107;
+      transform: translateY(-2px);
+    }
+
+    /* Portada */
+    .album-cover {
+      margin: 40px auto 20px;
+      max-width: 400px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+      transition: transform 0.3s ease;
+    }
+    .album-cover:hover {
+      transform: scale(1.03);
+    }
+    .album-cover img {
+      width: 100%;
+      display: block;
+    }
+
+    /* Reproductor */
+    audio {
+      margin: 20px auto;
+      width: 90%;
+      max-width: 600px;
+      border-radius: 8px;
+      background: #111;
+    }
+
+    /* Playlist */
+    #playlist {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 20px auto;
+      text-align: left;
+    }
+    #playlist li {
+      background: rgba(255,255,255,0.05);
+      margin: 6px 0;
+      padding: 12px 16px;
+      border-radius: 8px;
+      transition: background 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    #playlist li:hover {
+      background: rgba(255,255,255,0.15);
+      cursor: pointer;
+    }
+    #playlist li a {
+      color: #eee;
+      text-decoration: none;
+      flex: 1;
+    }
+    #playlist li::before {
+      content: "🎵";
+      font-size: 1.2rem;
+    }
+    #playlist .current-song {
+      background: #ff9800;
+      color: #111;
+      font-weight: 600;
+    }
+    #playlist .current-song a {
+      color: #111;
+    }
+
+    /* Duración */
+    .duration {
+      font-size: 0.9rem;
+      color: #bbb;
+      min-width: 50px;
+      text-align: right;
+    }
+
+    /* Créditos */
+    .credits {
+      max-width: 800px;
+      margin: 40px auto;
+      background: rgba(0,0,0,0.4);
+      padding: 20px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+  </style>
+
 </head>
-<br><hr><br>
-<div align="center"><a href="001.jpg" target="_blank"><img class="circular-square" width="380" src="001.jpg"></a></div><br>
-<center>
-<body bgcolor="#166866">
-    
-    <audio src="" controls autoplay="" id="audioPlayer">
-        Sorry, your browser doesn't support html5!
-    </audio>
-    <ul id="playlist">
-        <li class="current-song"><a href="01 Hoy.mp3">Hoy</a></li>
-        <li><a href="02 El portero José.mp3">El portero José</a></li>
-        <li><a href="03 Niño de plata.mp3">Niño de plata</a></li>
-		<li><a href="04 Alhelí.mp3">Alhelí</a></li>
-		<li><a href="05 La casa del patio.mp3">La casa del patio</a></li>
-		<li><a href="06 Silencio en el aire.mp3">Silencio en el aire</a></li>
-		<li><a href="07 Consejos a un padre llamado.mp3">Consejos a un padre llamado</a></li>
-		<li><a href="08 Detrás del más allá.mp3">Detrás del más allá</a></li>
-		<li><a href="09 Zamba del viento y del alma.mp3">Zamba del viento y del alma</a></li>
-		<li><a href="10 Hermano árbol.mp3">Hermano árbol</a></li>
-		<li><a href="11 Tan sólo por ser viejos.mp3">Tan sólo por ser viejos</a></li>
-		<li><a href="12 Alguna vez.mp3">Alguna vez</a></li>
-		<li><a href="13 La máquina del tiempo.mp3">La máquina del tiempo</a></li>
-		<li><a href="14 Eterno caminante.mp3">Eterno caminante</a></li>
-    </ul>
-    <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
-    <script src="audioPlayer.js"></script>
-    <script>
-        // loads the audio player
-        audioPlayer();
-    </script>
-</body><font size="4" color="white">
-<br><br><hr><p align="center">Todos los temas compuestos, arreglados e interpretados por Ricardo Contard excepto "<i>La casa del patio</i>"escrita junto a Marcos Caffieri.<br>Grabado entre diciembre de 2001 y enero de 2002 en estudios de Julio Turzak, Concepción del Uruguay, Entre Ríos, Argentina.<br>Reservados todos los derechos de los autores. Prohibida su reproducción.</p>
-</center></font>
+<body>
+
+<!-- Mini banner con botón atrás -->
+<header>
+  <button class="back-btn" onclick="window.history.back()">⬅ Atrás</button>
+  <h1>Zapatillas (2001)</h1>
+</header>
+
+  <!-- Portada -->
+  <div class="album-cover">
+    <a href="001.jpg" target="_blank">
+      <img src="001.jpg" alt="Portada del disco">
+    </a>
+  </div>
+
+  <!-- Reproductor -->
+  <audio src="" controls autoplay id="audioPlayer">
+    Sorry, your browser doesn't support HTML5!
+  </audio>
+
+  <!-- Playlist -->
+  <ul id="playlist">
+    <li class="current-song"><a href="01 Hoy.mp3">Hoy</a><span class="duration"></span></li>
+    <li><a href="02 El portero José.mp3">El portero José</a><span class="duration"></span></li>
+    <li><a href="03 Niño de plata.mp3">Niño de plata</a><span class="duration"></span></li>
+    <li><a href="04 Alhelí.mp3">Alhelí</a><span class="duration"></span></li>
+    <li><a href="05 La casa del patio.mp3">La casa del patio</a><span class="duration"></span></li>
+    <li><a href="06 Silencio en el aire.mp3">Silencio en el aire</a><span class="duration"></span></li>
+    <li><a href="07 Consejos a un padre llamado.mp3">Consejos a un padre llamado</a><span class="duration"></span></li>
+    <li><a href="08 Detrás del más allá.mp3">Detrás del más allá</a><span class="duration"></span></li>
+    <li><a href="09 Zamba del viento y del alma.mp3">Zamba del viento y del alma</a><span class="duration"></span></li>
+    <li><a href="10 Hermano árbol.mp3">Hermano árbol</a><span class="duration"></span></li>
+    <li><a href="11 Tan sólo por ser viejos.mp3">Tan sólo por ser viejos</a><span class="duration"></span></li>
+    <li><a href="12 Alguna vez.mp3">Alguna vez</a><span class="duration"></span></li>
+    <li><a href="13 La máquina del tiempo.mp3">La máquina del tiempo</a><span class="duration"></span></li>
+    <li><a href="14 Eterno caminante.mp3">Eterno caminante</a><span class="duration"></span></li>
+  </ul>
+
+  <!-- Créditos -->
+  <div class="credits">
+    <p>
+      Todos los temas compuestos, arreglados e interpretados por Ricardo Contard excepto <i>“La casa del patio”</i>, escrita junto a Marcos Caffieri.<br>
+      Grabado entre diciembre de 2001 y enero de 2002 en estudios de Julio Turzak, Concepción del Uruguay, Entre Ríos, Argentina.<br>
+      Reservados todos los derechos de los autores. Prohibida su reproducción.
+    </p>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+  <script src="audioPlayer.js"></script>
+  <script>
+    // Inicia el reproductor
+    audioPlayer();
+
+    // Función para convertir segundos a mm:ss
+    function formatTime(seconds) {
+      const min = Math.floor(seconds / 60);
+      const sec = Math.floor(seconds % 60);
+      return `${min}:${sec < 10 ? '0' : ''}${sec}`;
+    }
+
+    // Recorre cada canción y obtiene su duración
+    document.querySelectorAll('#playlist li').forEach(li => {
+      const link = li.querySelector('a');
+      const durationSpan = li.querySelector('.duration');
+      const audio = new Audio(link.getAttribute('href'));
+
+      audio.addEventListener('loadedmetadata', () => {
+        durationSpan.textContent = formatTime(audio.duration);
+      });
+    });
+  </script>
+
+</body>
 </html>
