@@ -1,80 +1,183 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-	    
-		#playlist{
-            list-style: none;
-        }
-        #playlist li a{
-            color:white;
-            text-decoration: none;
-			font-family: Arial, Helvetica, sans-serif;
-        }
-        #playlist .current-song a{
-            color:#87CEFA;
-			font-weight: 900;
-        }
-
-.circular-square {
-  border-radius: 3%;
-}
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Disco 17</title>
 <link rel="stylesheet" href="fuentes.css">
+<style>
+    body {
+        background-color: #166866;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #FCF3CF;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Mini banner con botón Atrás */
+    .banner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #144D53;
+        padding: 10px 20px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+    }
+
+    .banner button {
+        padding: 8px 16px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: #87CEFA;
+        color: #fff;
+        cursor: pointer;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .card {
+        background-color: #1A5A5F;
+        max-width: 400px;
+        margin: 20px auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        padding: 15px;
+        text-align: center;
+    }
+
+    .card img {
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    /* Playlist */
+    #playlist {
+        list-style: none;
+        max-width: 400px;
+        margin: 20px auto;
+        padding: 0;
+    }
+
+    #playlist li {
+        background-color: #144D53;
+        margin: 6px 0;
+        padding: 10px 12px;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    #playlist li:hover {
+        background-color: #1E6B70;
+    }
+
+    #playlist li a {
+        color: #FCF3CF;
+        text-decoration: none;
+        flex: 1;
+        font-size: 16px;
+    }
+
+    #playlist li.current-song {
+        background-color: #87CEFA;
+        font-weight: bold;
+    }
+
+    #playlist li.current-song a {
+        color: #144D53;
+    }
+
+    #playlist li::before {
+        content: "🎵";
+        margin-right: 10px;
+    }
+
+    /* Reproductor compacto */
+    audio {
+        width: 100%;
+        max-width: 400px;
+        margin: 10px auto;
+        display: block;
+    }
+
+    /* Créditos */
+    .credits {
+        max-width: 400px;
+        margin: 20px auto 40px;
+        text-align: center;
+        font-size: 14px;
+        line-height: 1.5;
+        color: #FCF3CF;
+        background-color: rgba(0,0,0,0.2);
+        padding: 10px;
+        border-radius: 6px;
+    }
+</style>
 </head>
-<br><hr><br>
-<div align="center"><a href="017.jpg" target="_blank"><img class="circular-square" width="380" src="017.jpg"></a></div><br>
-<center>
-<body bgcolor="#166866">
-    
-    <audio src="" controls autoplay="" id="audioPlayer">
-        Sorry, your browser doesn't support html5!
-    </audio>
-    <ul id="playlist">
-        <li class="current-song"><a href="01 Amasando un verso.mp3">Amasando un verso</a></li>
-<li><a href="02 Adivinación.mp3">Adivinación</a></li>
-<li><a href="03 Testamento.mp3">Testamento</a></li>
-<li><a href="04 Hasta que se apague el sol.mp3">Hasta que se apague el sol</a></li>
-<li><a href="05 Dos hermanos.mp3">Dos hermanos</a></li>
-<li><a href="06 Oda a la alegría.mp3">Oda a la alegría</a></li>
-<li><a href="07 Inventario.mp3">Inventario</a></li>
-<li><a href="08 Me trajo hasta aquí.mp3">Me trajo hasta aquí</a></li>
-<li><a href="09 Motivos.mp3">Motivos</a></li>
-<li><a href="10 En la orilla (instrumental).mp3">En la orilla (instr.)</a></li>
-<li><a href="11 Adentro.mp3">Adentro</a></li>
-<li><a href="12 Botellas en el mar.mp3">Botellas en el mar</a></li>
-<li><a href="13 Silencio en el aire.mp3">Silencio en el aire</a></li>
-<li><a href="14 Preguntas.mp3">Preguntas</a></li>
-<li><a href="15 Sin embargos.mp3">Sin embargo</a></li>
-<li><a href="16 Tu mejor amigo.mp3">Tu mejor amigo</a></li>
-<li><a href="17 Un valioso tesoro.mp3">Un valioso tesoro</a></li>
-<li><a href="18 Volver a ser.mp3">Volver a ser</a></li>
-<li><a href="19 Tú y yo.mp3">Tú y yo</a></li>
-<li><a href="20 Mar y sol.mp3">Mar y sol</a></li>
+<body>
 
+<!-- Mini banner con botón Atrás -->
+<div class="banner">
+    <h2>Botellas en el mar (2012)</h2>
+    <button onclick="history.back()">← Atrás</button>
+</div>
 
-    </ul>
-    <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
-    <script src="audioPlayer.js"></script>
-    <script>
-        // loads the audio player
-        audioPlayer();
-    </script>
+<!-- Portada -->
+<div class="card">
+    <a href="017.jpg" target="_blank"><img src="017.jpg" alt="Portada Disco 17"></a>
+</div>
+
+<!-- Reproductor -->
+<audio src="" controls autoplay id="audioPlayer">
+    Sorry, your browser doesn't support HTML5 audio.
+</audio>
+
+<!-- Playlist -->
+<ul id="playlist">
+    <li class="current-song"><a href="01 Amasando un verso.mp3">Amasando un verso</a></li>
+    <li><a href="02 Adivinación.mp3">Adivinación</a></li>
+    <li><a href="03 Testamento.mp3">Testamento</a></li>
+    <li><a href="04 Hasta que se apague el sol.mp3">Hasta que se apague el sol</a></li>
+    <li><a href="05 Dos hermanos.mp3">Dos hermanos</a></li>
+    <li><a href="06 Oda a la alegría.mp3">Oda a la alegría</a></li>
+    <li><a href="07 Inventario.mp3">Inventario</a></li>
+    <li><a href="08 Me trajo hasta aquí.mp3">Me trajo hasta aquí</a></li>
+    <li><a href="09 Motivos.mp3">Motivos</a></li>
+    <li><a href="10 En la orilla (instrumental).mp3">En la orilla (instr.)</a></li>
+    <li><a href="11 Adentro.mp3">Adentro</a></li>
+    <li><a href="12 Botellas en el mar.mp3">Botellas en el mar</a></li>
+    <li><a href="13 Silencio en el aire.mp3">Silencio en el aire</a></li>
+    <li><a href="14 Preguntas.mp3">Preguntas</a></li>
+    <li><a href="15 Sin embargos.mp3">Sin embargo</a></li>
+    <li><a href="16 Tu mejor amigo.mp3">Tu mejor amigo</a></li>
+    <li><a href="17 Un valioso tesoro.mp3">Un valioso tesoro</a></li>
+    <li><a href="18 Volver a ser.mp3">Volver a ser</a></li>
+    <li><a href="19 Tú y yo.mp3">Tú y yo</a></li>
+    <li><a href="20 Mar y sol.mp3">Mar y sol</a></li>
+</ul>
+
+<!-- Créditos -->
+<div class="credits">
+En el siglo 21, la era de las T.I.C. (Tecnologías de la información y la comunicación) vivimos uno de los más grandes climas de individualismo de la historia.<br>
+Los medios de comunicación evolucionan cada vez más, abriéndose paso al futuro; pero las personas se hallan cada vez más solas, aisladas del elemento humano que las rodea.<br>
+Se aferran a los aparatos que los mantienen "conectados con la realidad".<br>
+Si quisiera transmitir mis ideas encerrando mensajes en botellas para luego arrojarlas al mar, es seguro que al llegar a una orilla, la mayoría las ignoraría.<br>
+Aún así, este "disco" es mi botella lanzada al mar, con palabras para quien las encuentre, para ese pequeño porcentaje de humanidad.<br>
+</div>
+
+<!-- Imagen final -->
+<div class="card">
+    <a href="017b.jpg" target="_blank"><img src="017b.jpg" alt="Imagen final Disco 17"></a>
+</div>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+<script src="audioPlayer.js"></script>
+<script>
+    // Inicializa el reproductor
+    audioPlayer();
+</script>
 </body>
-<br><br><hr><font color="#FCF3CF"><p align="center">
-En el siglo 21, la era de las T.I.C. (Tecnologías de la información y la comunicación)<br>
-vivimos uno de los más grandes climas de individualismo de la historia.<br>
-Los medios de comunicación evolucionan cada vez más, abriéndose paso al futuro;<br>
-pero las personas se hallan cada vez más solas, aisladas del elemento humano que las rodea.<br>
-Se aferran a los aparatos que los mantienen "conectados con la realidad",<br>
-a tal punto que es más conveniente enviar un “sms” que dar un simple abrazo a un amigo.<br>
-Si quisiera transmitir mis ideas encerrando mensajes en botellas para luego arrojarlas al mar,<br>
-es seguro que al llegar a una orilla, el 95 % de las personas que ven la botella en la arena<br>
-sólo la juntan para arrojarla de nuevo al agua...<br>
-Aún así, este "disco" es mi botella lanzada al mar, con palabras para quien las encuentre,<br>
-para ese 5 % restante de la humanidad... <br></p></font><hr>
-<div align="center"><a href="017b.jpg" target="_blank"><img src="017b.jpg" width="380"></a></div><br>
-</center>
 </html>
