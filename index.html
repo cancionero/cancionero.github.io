@@ -1,101 +1,281 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="es">
 <head>
-<title>cancionero.ml</title>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-title" content="cancionero.ml" />
-<meta name="generator" content="VisualNEO Web (19.9.16)" />
-<meta name="date" content="2025-08-29 21:28" />
-<meta name="version" content="1.0" />
-<meta name="copyright" content="Copyright 2025 IoSoft Producciones" />
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="css/nzAnimate.min.css">
-<link rel="stylesheet" href="css/neoapp-ui.min.css">
-<link rel="stylesheet" href="css/style.css">
-<link rel="shortcut icon" href="img/icono.png" />
-<link rel="stylesheet" href="fuentes.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discografía MP3 de Ricardo Contard</title>
+  <meta name="description" content="Discografía MP3 completa de Ricardo Contard. Escuchá y descargá discos en línea de manera simple y organizada.">
+  <meta name="keywords" content="discografía, MP3, cancionero, Ricardo Contard, música, álbumes, canciones, escuchar online">
+  <meta name="author" content="Ricardo Contard">
+  <meta name="robots" content="index, follow">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- JSON-LD para SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MusicAlbum",
+    "name": "Discografía MP3 de Ricardo Contard",
+    "url": "https://cancionero.github.io/",
+	"image": "img/portada.png",
+	"description": "Discografía MP3 completa de Ricardo Contard. Todos los discos disponibles para escuchar.",
+    "artist": {
+      "@type": "Person",
+      "name": "Ricardo Contard"
+    },
+    "genre": "Música",
+    "numberOfTracks": 30
+  }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #121212;
+      color: #eee;
+      scroll-behavior: smooth;
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, #1f1f1f, #2c2c2c);
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.6);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    header svg {
+      width: 28px;
+      height: 28px;
+      fill: #ff9800;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 18px;
+    }
+
+    nav a {
+      color: #eee;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #ff9800;
+    }
+
+    /* DISCOS GRID */
+    .discografia {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 22px;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .disco {
+      border-radius: 14px;
+      overflow: hidden;
+      background: #1e1e1e;
+      border: 2px solid #2c2c2c;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s forwards;
+    }
+
+    .disco:hover {
+      transform: scale(1.08);
+      border-color: #ff9800;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+    }
+
+    .disco img {
+      width: 100%;
+      display: block;
+    }
+
+    .disco a {
+      text-decoration: none;
+      display: block;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* SECCIONES INFO */
+    section {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 25px;
+      background: #1e1e1e;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+
+    section h2 {
+      margin-top: 0;
+      color: #ff9800;
+    }
+
+    section p {
+      color: #ccc;
+      line-height: 1.7;
+    }
+
+    /* RESPONSIVE NAV */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+    }
+	
+	/* Estilo de la sección Acerca */
+  
+  #acerca {
+    background-color: #1a1a1a; /* ejemplo de fondo oscuro */
+    color: #f0f0f0; /* color del texto normal */
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  /* Estilo de los enlaces dentro de #acerca */
+  #acerca a {
+    color: #ffd700; /* color dorado, claro sobre fondo oscuro */
+    text-decoration: none; /* quita subrayado */
+  }
+
+  /* Estilo cuando se pasa el mouse sobre el enlace */
+  #acerca a:hover {
+    color: #ffa500; /* un tono más intenso */
+    text-decoration: underline; /* opcional, resalta al pasar el mouse */
+  }
+  
+  /* Estilo de la sección Ayuda */
+  
+  #ayuda {
+    background-color: #1a1a1a; /* ejemplo de fondo oscuro */
+    color: #f0f0f0; /* color del texto normal */
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  /* Estilo de los enlaces dentro de #acerca */
+  #ayuda a {
+    color: #ffd700; /* color dorado, claro sobre fondo oscuro */
+    text-decoration: none; /* quita subrayado */
+  }
+
+  /* Estilo cuando se pasa el mouse sobre el enlace */
+  #ayuda a:hover {
+    color: #ffa500; /* un tono más intenso */
+    text-decoration: underline; /* opcional, resalta al pasar el mouse */
+  }
+  
+  </style>
 </head>
-<body id="ng-app" ng-app="NeoApp" ng-cloak>
-<div ng-controller="NeoApp_CoreCtrl" ng-view ng-cloak id="ng-view" class="app-viewport[NAB._pageEffect]"></div>
-<script type="text/ng-template" id="INTRO">
-<div id="INTRO">
-<div id="ContINTRO" class="[NAB.ContINTRO_effect]" ng-style="NAB.ContINTRO_style" ng-hide="NAB.ContINTRO_hidden" ng-disabled="NAB.ContINTRO_disabled">
-<div id="Paragraph1" class="[NAB.Paragraph1_effect]" ng-style="NAB.Paragraph1_style" ng-hide="NAB.Paragraph1_hidden" ng-disabled="NAB.Paragraph1_disabled"><h3>Discografía MP3</h3></div>
-<img id="btnON" alt="" ng-src="img/on.png" class="[NAB.btnON_effect]" ng-style="NAB.btnON_style" ng-hide="NAB.btnON_hidden" ng-disabled="NAB.btnON_disabled" ng-click="btnON_click()">
-</div>
-</div>
-</script>
-<script type="text/ng-template" id="Discos">
-<div id="Discos">
-<div id="ListaDiscos" class="[NAB.ListaDiscos_effect]" ng-style="NAB.ListaDiscos_style" ng-hide="NAB.ListaDiscos_hidden" ng-disabled="NAB.ListaDiscos_disabled">
-<img id="Image1" alt="" ng-src="img/01.jpg" class="circular-square [NAB.Image1_effect]" ng-style="NAB.Image1_style" ng-hide="NAB.Image1_hidden" ng-disabled="NAB.Image1_disabled" ng-click="Image1_click()">
-<img id="Image2" alt="" ng-src="img/02.jpg" class="circular-square [NAB.Image2_effect]" ng-style="NAB.Image2_style" ng-hide="NAB.Image2_hidden" ng-disabled="NAB.Image2_disabled" ng-click="Image2_click()">
-<img id="Image3" alt="" ng-src="img/03.jpg" class="circular-square [NAB.Image3_effect]" ng-style="NAB.Image3_style" ng-hide="NAB.Image3_hidden" ng-disabled="NAB.Image3_disabled" ng-click="Image3_click()">
-<img id="Image4" alt="" ng-src="img/04.jpg" class="circular-square [NAB.Image4_effect]" ng-style="NAB.Image4_style" ng-hide="NAB.Image4_hidden" ng-disabled="NAB.Image4_disabled" ng-click="Image4_click()">
-<img id="Image5" alt="" ng-src="img/05.jpg" class="circular-square [NAB.Image5_effect]" ng-style="NAB.Image5_style" ng-hide="NAB.Image5_hidden" ng-disabled="NAB.Image5_disabled" ng-click="Image5_click()">
-<img id="Image6" alt="" ng-src="img/06.jpg" class="circular-square [NAB.Image6_effect]" ng-style="NAB.Image6_style" ng-hide="NAB.Image6_hidden" ng-disabled="NAB.Image6_disabled" ng-click="Image6_click()">
-<img id="Image7" alt="" ng-src="img/07.jpg" class="circular-square [NAB.Image7_effect]" ng-style="NAB.Image7_style" ng-hide="NAB.Image7_hidden" ng-disabled="NAB.Image7_disabled" ng-click="Image7_click()">
-<img id="Image8" alt="" ng-src="img/08.jpg" class="circular-square [NAB.Image8_effect]" ng-style="NAB.Image8_style" ng-hide="NAB.Image8_hidden" ng-disabled="NAB.Image8_disabled" ng-click="Image8_click()">
-<img id="Image9" alt="" ng-src="img/09.jpg" class="circular-square [NAB.Image9_effect]" ng-style="NAB.Image9_style" ng-hide="NAB.Image9_hidden" ng-disabled="NAB.Image9_disabled" ng-click="Image9_click()">
-<img id="Image10" alt="" ng-src="img/10.jpg" class="circular-square [NAB.Image10_effect]" ng-style="NAB.Image10_style" ng-hide="NAB.Image10_hidden" ng-disabled="NAB.Image10_disabled" ng-click="Image10_click()">
-<img id="Image11" alt="" ng-src="img/11.jpg" class="circular-square [NAB.Image11_effect]" ng-style="NAB.Image11_style" ng-hide="NAB.Image11_hidden" ng-disabled="NAB.Image11_disabled" ng-click="Image11_click()">
-<img id="Image12" alt="" ng-src="img/12.jpg" class="circular-square [NAB.Image12_effect]" ng-style="NAB.Image12_style" ng-hide="NAB.Image12_hidden" ng-disabled="NAB.Image12_disabled" ng-click="Image12_click()">
-<img id="Image13" alt="" ng-src="img/13.jpg" class="circular-square [NAB.Image13_effect]" ng-style="NAB.Image13_style" ng-hide="NAB.Image13_hidden" ng-disabled="NAB.Image13_disabled" ng-click="Image13_click()">
-<img id="Image14" alt="" ng-src="img/14.jpg" class="circular-square [NAB.Image14_effect]" ng-style="NAB.Image14_style" ng-hide="NAB.Image14_hidden" ng-disabled="NAB.Image14_disabled" ng-click="Image14_click()">
-<img id="Image15" alt="" ng-src="img/15.jpg" class="circular-square [NAB.Image15_effect]" ng-style="NAB.Image15_style" ng-hide="NAB.Image15_hidden" ng-disabled="NAB.Image15_disabled" ng-click="Image15_click()">
-<img id="Image16" alt="" ng-src="img/16.jpg" class="circular-square [NAB.Image16_effect]" ng-style="NAB.Image16_style" ng-hide="NAB.Image16_hidden" ng-disabled="NAB.Image16_disabled" ng-click="Image16_click()">
-<img id="Image17" alt="" ng-src="img/17.jpg" class="circular-square [NAB.Image17_effect]" ng-style="NAB.Image17_style" ng-hide="NAB.Image17_hidden" ng-disabled="NAB.Image17_disabled" ng-click="Image17_click()">
-<img id="Image18" alt="" ng-src="img/18.jpg" class="circular-square [NAB.Image18_effect]" ng-style="NAB.Image18_style" ng-hide="NAB.Image18_hidden" ng-disabled="NAB.Image18_disabled" ng-click="Image18_click()">
-<img id="Image19" alt="" ng-src="img/19.jpg" class="circular-square [NAB.Image19_effect]" ng-style="NAB.Image19_style" ng-hide="NAB.Image19_hidden" ng-disabled="NAB.Image19_disabled" ng-click="Image19_click()">
-<img id="Image20" alt="" ng-src="img/20.jpg" class="circular-square [NAB.Image20_effect]" ng-style="NAB.Image20_style" ng-hide="NAB.Image20_hidden" ng-disabled="NAB.Image20_disabled" ng-click="Image20_click()">
-<img id="Image21" alt="" ng-src="img/21.jpg" class="circular-square [NAB.Image21_effect]" ng-style="NAB.Image21_style" ng-hide="NAB.Image21_hidden" ng-disabled="NAB.Image21_disabled" ng-click="Image21_click()">
-<img id="Image22" alt="" ng-src="img/22.jpg" class="circular-square [NAB.Image22_effect]" ng-style="NAB.Image22_style" ng-hide="NAB.Image22_hidden" ng-disabled="NAB.Image22_disabled" ng-click="Image22_click()">
-<img id="Image23" alt="" ng-src="img/23.jpg" class="circular-square [NAB.Image23_effect]" ng-style="NAB.Image23_style" ng-hide="NAB.Image23_hidden" ng-disabled="NAB.Image23_disabled" ng-click="Image23_click()">
-<img id="Image24" alt="" ng-src="img/24.jpg" class="circular-square [NAB.Image24_effect]" ng-style="NAB.Image24_style" ng-hide="NAB.Image24_hidden" ng-disabled="NAB.Image24_disabled" ng-click="Image24_click()">
-<img id="Image25" alt="" ng-src="img/25.jpg" class="circular-square [NAB.Image25_effect]" ng-style="NAB.Image25_style" ng-hide="NAB.Image25_hidden" ng-disabled="NAB.Image25_disabled" ng-click="Image25_click()">
-<img id="Image26" alt="" ng-src="img/26.jpg" class="circular-square [NAB.Image26_effect]" ng-style="NAB.Image26_style" ng-hide="NAB.Image26_hidden" ng-disabled="NAB.Image26_disabled" ng-click="Image26_click()">
-<img id="Image27" alt="" ng-src="img/27.jpg" class="circular-square [NAB.Image27_effect]" ng-style="NAB.Image27_style" ng-hide="NAB.Image27_hidden" ng-disabled="NAB.Image27_disabled" ng-click="Image27_click()">
-<img id="Image28" alt="" ng-src="img/28.jpg" class="circular-square [NAB.Image28_effect]" ng-style="NAB.Image28_style" ng-hide="NAB.Image28_hidden" ng-disabled="NAB.Image28_disabled" ng-click="Image28_click()">
-<img id="Image29" alt="" ng-src="img/29.jpg" class="circular-square [NAB.Image29_effect]" ng-style="NAB.Image29_style" ng-hide="NAB.Image29_hidden" ng-disabled="NAB.Image29_disabled" ng-click="Image29_click()">
-<img id="Image30" alt="" ng-src="img/30.jpg" class="circular-square [NAB.Image30_effect]" ng-style="NAB.Image30_style" ng-hide="NAB.Image30_hidden" ng-disabled="NAB.Image30_disabled" ng-click="Image30_click()">
-</div>
-<div id="Header" class="[NAB.Header_effect]" ng-style="NAB.Header_style" ng-hide="NAB.Header_hidden" ng-disabled="NAB.Header_disabled" ng-click="Header_click()"><br><div align="center"><font color="#FAEBD7"><h1>Mi Cancionero MP3</h1></font></div><br>
-<button id="btnAcercaDe" type="button"  class="btn btn-primary [NAB.btnAcercaDe_effect]" ng-style="NAB.btnAcercaDe_style" ng-hide="NAB.btnAcercaDe_hidden" ng-disabled="NAB.btnAcercaDe_disabled" ng-click="btnAcercaDe_click()"><span class="glyphicon glyphicon-question-sign"></span></button>
-</div>
-</div>
-</script>
-<script type="text/ng-template" id="Escuchar">
-<div id="Escuchar">
-<div id="ContEscuchar" class="[NAB.ContEscuchar_effect]" ng-style="NAB.ContEscuchar_style" ng-hide="NAB.ContEscuchar_hidden" ng-disabled="NAB.ContEscuchar_disabled">
-</div>
-<div id="Header" class="[NAB.Header_effect]" ng-style="NAB.Header_style" ng-hide="NAB.Header_hidden" ng-disabled="NAB.Header_disabled" ng-click="Header_click()"><br><div align="center"><font color="#FAEBD7"><h1>Mi Cancionero MP3</h1></font></div><br>
-<button id="btnAcercaDe" type="button"  class="btn btn-primary [NAB.btnAcercaDe_effect]" ng-style="NAB.btnAcercaDe_style" ng-hide="NAB.btnAcercaDe_hidden" ng-disabled="NAB.btnAcercaDe_disabled" ng-click="btnAcercaDe_click()"><span class="glyphicon glyphicon-question-sign"></span></button>
-</div>
-</div>
-</script>
-<script type="text/ng-template" id="NewDialog">
-<div id="AcercaDe" class="modal-dialog modal-sm"><div class="modal-content" style="height:100%">
-<div id="Container1" class="[NAB.Container1_effect]" ng-style="NAB.Container1_style" ng-hide="NAB.Container1_hidden" ng-disabled="NAB.Container1_disabled"><br><div align="center"><h3>cancionero.ml</h3> fue creado por <a href="https://iosoft2022.github.io" target="_blank"><strong>IoSoft Producciones</strong></a><br><br><img src="img/logoml.png" height="140">
-<br><hr>
-Autor e intérprete de todos los fonogramas:<br><a href="https://ricardocontard.com.ar" target="_blank"><strong>Ricardo Contard</strong></a><br>(Salvo donde se indica)</div>
-</div>
-<button id="PushButton2" type="button"  class="btn btn-danger [NAB.PushButton2_effect]" ng-style="NAB.PushButton2_style" ng-hide="NAB.PushButton2_hidden" ng-disabled="NAB.PushButton2_disabled" ng-click="PushButton2_click()">X</button>
-</div></div>
-</script>
-<script src="js/jquery.min.js"></script>
-<script src="js/angular.min.js"></script>
-<script src="js/angular-touch.min.js"></script>
-<script src="js/angular-route.min.js"></script>
-<script src="js/angular-animate.min.js"></script>
-<script src="js/angular-sanitize.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/neoapp.min.js"></script>
-<script src="js/neoapp-ui.min.js"></script>
-<script src="js/main.js"></script>
+<body>
+
+  <header>
+    <h1>
+      <img src="img/logo.png" height="40">
+      Discografía MP3
+    </h1>
+    <nav>
+      <ul>
+        <li><a href="#ayuda">Ayuda</a></li>
+        <li><a href="#acerca">Acerca de</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Discografía completa de Ricardo Contard</h2>
+      <p>Explorá los 30 discos de la discografía MP3 de Ricardo Contard. Escuchá canciones como "Adentro", "Yo quiero ser", "Amasando", "Espectro", "Un bichito" y muchos más. Descubrí la música organizada por álbum y año, disponible para reproducir en línea.</p>
+    </section>
+
+    <div class="discografia">
+      <!-- Portadas con enlaces SEO-friendly -->
+      <div class="disco"><a title="Zapatillas (2000)" href="001/001.html"><img src="tapas/01.jpg" alt="Disco 1"></a></div>
+      <div class="disco"><a title="Como el viento (2004)" href="002/002.html"><img src="tapas/02.jpg" alt="Disco 2"></a></div>
+      <div class="disco"><a title="El Vendedor de Canciones (2006)" href="003/003.html"><img src="tapas/03.jpg" alt="Disco 3"></a></div>
+      <div class="disco"><a title="Canciones para Valentino (2007)" href="004/004.html"><img src="tapas/04.jpg" alt="Disco 4"></a></div>
+      <div class="disco"><a title="Lo esencial es invisible a los ojos (2007)" href="005/005.html"><img src="tapas/05.jpg" alt="Disco 5"></a></div>
+      <div class="disco"><a title="Mensaje 1 (2007)" href="006/006.html"><img src="tapas/06.jpg" alt="Disco 6"></a></div>
+      <div class="disco"><a title="Mensaje 2 (2007)" href="007/007.html"><img src="tapas/07.jpg" alt="Disco 7"></a></div>
+      <div class="disco"><a title="Volando por el éter (2008)" href="008/008.html"><img src="tapas/08.jpg" alt="Disco 8"></a></div>
+      <div class="disco"><a title="Odas (2008)" href="009/009.html"><img src="tapas/09.jpg" alt="Disco 9"></a></div>
+      <div class="disco"><a title="Canciones de amor para Marisol (2009)" href="010/010.html"><img src="tapas/10.jpg" alt="Disco 10"></a></div>
+      <div class="disco"><a title="Amasando (2009)" href="011/011.html"><img src="tapas/11.jpg" alt="Disco 11"></a></div>
+      <div class="disco"><a title="Canciones de bolsillo (2009)" href="012/012.html"><img src="tapas/12.jpg" alt="Disco 12"></a></div>
+      <div class="disco"><a title="Lindas canciones (2010)" href="013/013.html"><img src="tapas/13.jpg" alt="Disco 13"></a></div>
+      <div class="disco"><a title="Todo lo que buscamos fuera (2010)" href="014/014.html"><img src="tapas/14.jpg" alt="Disco 14"></a></div>
+      <div class="disco"><a title="En vivo (2010)" href="015/015.html"><img src="tapas/15.jpg" alt="Disco 15"></a></div>
+      <div class="disco"><a title="Adentro (2011)" href="016/016.html"><img src="tapas/16.jpg" alt="Disco 16"></a></div>
+      <div class="disco"><a title="Botellas en el mar (2012)" href="017/017.html"><img src="tapas/17.jpg" alt="Disco 17"></a></div>
+      <div class="disco"><a title="Con el fuego en las manos (2013)" href="018/018.html"><img src="tapas/18.jpg" alt="Disco 18"></a></div>
+      <div class="disco"><a title="Trébol. Diez años después (2013)" href="019/019.html"><img src="tapas/19.jpg" alt="Disco 19"></a></div>
+      <div class="disco"><a title="Abierto (2013)" href="020/020.html"><img src="tapas/20.jpg" alt="Disco 20"></a></div>
+      <div class="disco"><a title="Soy (2014)" href="021/021.html"><img src="tapas/21.jpg" alt="Disco 21"></a></div>
+      <div class="disco"><a title="Yo quiero ser (2014)" href="022/022.html"><img src="tapas/22.jpg" alt="Disco 22"></a></div>
+      <div class="disco"><a title="Coral (2015)" href="023/023.html"><img src="tapas/23.jpg" alt="Disco 23"></a></div>
+      <div class="disco"><a title="Desnudo (2016)" href="024/024.html"><img src="tapas/24.jpg" alt="Disco 24"></a></div>
+      <div class="disco"><a title="Alas (2016)" href="025/025.html"><img src="tapas/25.jpg" alt="Disco 25"></a></div>
+      <div class="disco"><a title="Trébol en vivo (2016)" href="026/026.html"><img src="tapas/26.jpg" alt="Disco 26"></a></div>
+      <div class="disco"><a title="La maleta (2017)" href="027/027.html"><img src="tapas/27.jpg" alt="Disco 27"></a></div>
+      <div class="disco"><a title="Pinochetto (2019)" href="028/028.html"><img src="tapas/28.jpg" alt="Disco 28"></a></div>
+      <div class="disco"><a title="Edificio 21 (2020)" href="029/029.html"><img src="tapas/29.jpg" alt="Disco 29"></a></div>
+      <div class="disco"><a title="XL (2020)" href="030/030.html"><img src="tapas/30.jpg" alt="Disco 30"></a></div>
+    </div>
+  </main>
+
+  <section id="ayuda">
+    <h2>Ayuda</h2>
+    <p>Si tenés problemas para reproducir los discos, asegurate de que tu navegador permita abrir enlaces externos. También podés contactarnos para recibir asistencia (<a href="https://api.whatsapp.com/send?phone=543442505214" target="_blank">WhatsApp</a>). </p>
+  </section>
+
+  <section id="acerca">
+    <h2>Acerca de</h2>
+    <p>Esta página presenta la discografía MP3 completa de Ricardo Contard. Es un proyecto personal pensado para compartir música de manera simple y ordenada. Todos los derechos reservados de los autores especificados en cada disco.
+<br>Desarrollado por <a href="https://iosoft2022.github.io" target="_blank">IoSoft Producciones</a></p><br><div align="center"><img src="img/logoml.png" height="120"></div>
+  </section>
+
 </body>
 </html>
